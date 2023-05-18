@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login_cadas.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="nav">
+            <ul class="links">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Eventos</a>
+                </li>
+                <li>
+                    <a href="">Ranking</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="caixa" >
+            <div class="conteudo">
+            <h1>Cadastro</h1>
+       
+            <input type="text" id="input_nome" placeholder="Nome:"><br><br>
+
+            <input id="input_nick" placeholder="Nick:"><br><br>
+
+            <input type="text" name="" id="input_email" placeholder="Email:"><br><br>
+
+
+            <input type="text" name="" id="input_senha" placeholder="Senha:"><br><br>
+
+
+            <input type="text" placeholder="Confirmar senha:">
+            
+            <p>Seu time de CS:GO:</p>
+            <select id="gender">
+                <option value="1">Imperial</option>
+                <option value="2">MIBR</option>
+                <option value="3">Furia</option>
+            </select>
+            <p>Seu nivel na Gc:</p>
+            <select name="" id="nivel">
+                
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                </select>
+            <button onclick="cadastrar()">Cadastro</button>
+            <p>Já tem conta?</p>
+            <ul class="login">
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function cadastrar() {
+        //aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = input_nome.value;
+        var nickVar = input_nick.value
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var timeVar = gender.value;
+        var nivelVar = nivel.value;
+
+
+        if (nomeVar == "" || nickVar == "" || emailVar == "" || senhaVar == "" || timeVar == "" || nivelVar == "" ) {
+            //cardErro.style.display = "block"
+            swal("Ops", "Preencha todos os campos 😠", "error")
+
+
+            finalizarAguardar();
+            return false;
+        }
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
+            swal("Ops", "O e-mail cadastrado é inválido. Por favor, insira um e-mail válido 😠", "warning")
+        }
+        else if (senhaVar.length < 8) {
+            swal("Ops", "A senha inserida é muito curta. Por favor,insira uma senha com pelo menos 8 caracteres 😠", "warning")
+        }
+        else {
+            setInterval('oi', 5000)
+        }
+            
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    timeServer: timeVar,
+                    nivelServer: nivelVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    //cardErro.style.display = "block";
+                    swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
+
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, 3000)
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    swal("Ops", "Mais de um usuário com o mesmo login e senha 😭!")
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
+        }
+
+
+    //function sumirMensagem() {
+        //cardErro.style.display = "none"
+    //}
+
+
+</script>

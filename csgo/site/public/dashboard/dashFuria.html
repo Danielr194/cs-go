@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furia</title>
+
+    <link rel="stylesheet" href="./dashMibr.css">
+    <script src="../js/funcoes.js"></script>
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul class="links">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Eventos</a>
+                </li>
+                <li>
+                    <a href="">Ranking</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <li><img src="../assets/dash/furiaLogo.png" alt="sss" width="50px"></li>
+        </div>
+        <div>
+            <p>Seja bem vindo!!!!</p>
+        </div>
+    </div>
+    <div class="main">
+        <div>
+            <h1>Furia</h1>
+        </div>
+
+        <div class="container">
+            <div id="exibir" class="caixa">
+                <div class="jogadores">
+                    <img src="../assets/dash/art.png" alt="" width="235px">
+                    <h3>arT</h3>
+                    <button onclick="estatistica()">ver performace</button>
+                </div>
+            </div>
+            <div class="caixa">
+                <div class="jogadores">
+                    <img src="../assets/dash/yuurih.jpg" alt="" width="235px" >
+                    <h3>yuurih    </h3>
+                    <button onclick="estatistica()">ver performace</button>
+                </div>
+            </div>
+            <div class="caixa">
+                <div class="jogadores">
+                    <img src="../assets/dash/kscerato.jpg" alt="" width="235px">
+                    <h3>chelo</h3>
+                    <button onclick="estatistica()">ver performace</button>
+                </div>
+            </div>
+            <div class="caixa">
+                <div class="jogadores">
+                    <img src="../assets/dash/saffe.jpg" alt="" width="235px">
+                    <h3>vini</h3>
+                    <button onclick="estatistica()">ver performace</button>
+                </div>
+            </div>
+            <div class="caixa">
+                <div class="jogadores">
+                    <img src="../assets/dash/drop.jpg" alt="" width="235px">
+                    <h3>jota</h3>
+                    <button onclick="estatistica()">ver performace</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Ranking">
+            <div class="rankingimp">
+                <h2>Posição no Ranking:</h2>
+                <h3>#29</h3>
+                <img src="../assets/dash/furiaLogo.png" alt="" width="60px"   >
+            </div>
+        </div>
+        <div class="corpo">
+            <div>
+                <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
+            </div>
+            <div class="caixa_mapas">
+                <h2>Vitorias por mapa mais jogados:</h2>
+                <div class="mapas_com_mais_v"> 
+                    <div>
+                        <h3>Nuke</h3>
+                        <h3>66.7%</h3>
+                    </div>
+                    <div>
+                    <h3>Anciente</h3>
+                    <h3>60%</h3>
+                </div>
+                <div>
+                    <h3>Ouverpass</h3>
+                    <h3>55.6%</h3>
+                </div>
+                <div>
+                    <h3>Mirage</h3>
+                    <h3>50%</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="caixa_camp">
+      <h2>  Proximos campeonatos:</h2>
+      <ul class="campeonato">
+        <li><img src="../assets/dash/blast.png" alt="" width="50px"><P>Blast premier spring final 2023</P> </li>
+        <li><img src="../assets/dash/fire.png" alt="" width="50px"><p>Fire league</p></li>
+    </ul>
+    </div>
+
+    <div class="jogos">
+        <h2>Ultimos jogos da Imperial:</h2>
+        <div class="ult_jogos">
+        <div class="imp">
+            <img src="../assets/dash/furiaLogo.png" alt="" width="78px" >
+            <p><b>Imperial</b></p>
+            <p class="verde"><b>1</b></p>
+        </div>
+        <div class="Sprout" >
+            <img src="../assets/dash/sprout.ico" alt="" width="78px">
+            <p><b>Paqueta</b></p>
+            <p class="vermelho"><b>2</b></p>
+            </div>
+            <hr>
+            <div class="imp">
+            <img src="../assets/dash/furiaLogo.png" alt=""  width="80px">
+            <p><b>Imperial</b></p>
+            <p class="verde"><b>1</b></p>
+            </div>
+            <div class="ine">
+                <img src="../assets/dash/9iner.png" alt="" width="80px">
+            <p><b>Forward</b></p>
+            <p class="vermelho"><b>2</b></p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var jogadores = {
+        fallen: {
+            'rating2': 1.11,
+            'KillsPerRound': 0.67,
+            'Headshots': '28.6%',
+            'DeathsPerRound': 0.58,
+        },
+        boltz: {
+            rating2: 1.14,
+            KillsPerRound: 0.70,
+            Headshots: '37.5%',
+            DeathsPerRound: 0.61,
+        },
+        chelo: {
+            rating2: 1.10,
+            KillsPerRound: 0.68,
+            Headshots: '58.0%',
+            DeathsPerRound: 0.63,
+        },
+        vini: {
+            rating2: 1.05,
+            KillsPerRound: 0.63,
+            Headshots: '50.1%',
+            DeathsPerRound: 0.63,
+        },
+        jota: {
+            rating2: 1.13,
+            KillsPerRound: 0.69,
+            Headshots: '42.2%',
+            DeathsPerRound: 0.59,
+        }
+
+    };
+    function estatistica() {
+
+    }
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['dezembro 2022', 'janeiro', 'fevereiro', 'março', 'abril', 'maio'],
+            datasets: [{
+                label: 'ranking nos ultimos 6 meses',
+                data: [33, 32, 37, 37, 34, 29,],
+                borderWidth: 1,
+                backgroundColor: 'rgb(11,215,101)',
+                borderColor: 'rgb(11,215,101)',
+            },]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+
+                }
+            }
+        }
+    });
+
+</script>

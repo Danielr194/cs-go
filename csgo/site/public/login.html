@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login_cadas.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="nav">
+            <ul class="links">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Eventos</a>
+                </li>
+                <li>
+                    <a href="">Ranking</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="caixa" >
+            <h1>Login</h1><br>
+            <div>
+            <input type="text" name="" id="email_input" placeholder="Email:"><br><br>
+
+            <input type="text" name="" id="senha_input" placeholder="Senha:"><br><br>
+            <button onclick="entrar()">Login</button>
+            <p>Ainda não tem conta?</p>
+            <ul class="cadastro">
+                <li>
+                    <a href="./cadastro.html">Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function entrar() {
+
+
+var emailVar = email_input.value;
+var senhaVar = senha_input.value;
+
+if (emailVar == "" || senhaVar == "") {
+    // cardErro.style.display = "block"
+    swal("Ops", "Preencha os campos para logar 😠!", "error")
+    finalizarAguardar();
+    return false;
+}
+else {
+    swal("Parábens", "Login realizado com sucesso redirecionando a tela do quiz 😄se divirta...!", "success");
+    setInterval('...', 2000)
+
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.idUsuario;
+                sessionStorage.TIME = json.fktimej;
+
+                setTimeout(function () {
+                   
+                        window.location =  "./dashboard/dashMibr.html";
+                   
+                }, 3000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            swal("Ops", "Email e/ou senha inválido(s)", "error")
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+//function sumirMensagem() {
+// cardErro.style.display = "none"
+// } 
+}  
+
+</script>

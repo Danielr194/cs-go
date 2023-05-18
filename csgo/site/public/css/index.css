@@ -1,0 +1,291 @@
+body {
+  background-color: #30322F;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(../assets/index/Untitled\ \(1\).svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  border: 50px;
+  border-bottom: 2px solid;
+  margin-bottom: 15px;
+  margin: auto;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 25px;
+  margin-left: 165px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.nav a:hover {
+  color: #F2A663;
+  transition: 0.5 all;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+
+
+.botoes_ld {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+
+.caixa_login {
+  display: flex;
+  border: 2px solid #F2921D;
+  border-radius: 3px;
+  background-color: #F2921D;
+  width: 65px;
+  justify-content: center;
+
+}
+
+
+/* main 1 */
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 18px;
+  margin-right: 20px;
+}
+
+.intro {
+  display: flex;
+  list-style: none;
+}
+
+.intro a {
+  position: absolute;
+  top: 450px;
+  right: 950px;
+  font-size: 20px;
+  color: white;
+  background-color: #2C3540;
+  width: 250px;
+  padding-left: 25px;
+  border-radius: 10px;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+
+/* Sobre o cs */
+
+
+.sobre_cs {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  color: white;
+  margin-top: 1100px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 500px;
+}
+
+.sobre_cs p {
+  text-align: unset;
+  color: white;
+  font-size: 20px;
+}
+
+.sobre_cs h3 {
+  text-align: unset;
+  color: white;
+  font-size: 30px;
+}
+
+
+/* Pergunta */
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  flex-direction: row;
+  text-align: center;
+  margin-bottom: 500px;
+  margin-top: 750px;
+}
+
+
+.caixa li {
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa p {
+  display: flex;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  font-size: 18px;
+}
+
+.mapas1 {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-right: 15px;
+  align-items: center;
+}
+
+.mapas2 {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-right: 15px;
+}
+
+.select_mapa {
+  justify-content: center;
+}
+
+.select_mapa select {
+  display: flex;
+  font-size: 15px;
+  border-radius: 8px;
+
+}
+
+.caixa button {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  justify-content: center;
+  font-size: 15px;
+  border-radius: 12px;
+  background-color: #F2A663;
+  text-align: justify;
+}
+
+/* Pagina de noticias */
+
+
+.noticias {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.eventos {
+  display: flex;
+  margin-right: 10px;
+  gap: 10rem;
+}
+
+.eventos h2 {
+  text-align: center;
+  justify-content: center;
+
+}
+
+.caixa {
+  height: 100%;
+  flex-direction: column;
+  border: #2C3540 solid;
+  background-color: #2C3540;
+  justify-content: center;
+}
+
+
+.ranking {
+  border: #2C3540 solid;
+  background-color: #2C3540;
+  width: 230px;
+  padding-left: 13px;
+
+}
+
+.ranking div {
+  display: flex;
+  gap: 3rem;
+}
+
+.ranking img {
+  display: flex;
+  margin-top: 20px;
+}
+
+.ranking h3 {
+  text-align: center;
+}
+
+.ranking .navi {
+  gap: 1rem;
+}
+
+.noticias_prin {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.eventos {
+  flex-direction: row-reverse;
+}
+
+
+/* ULTIMOS JOGOS */
+
+.jogos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 250px;
+  justify-content: center;
+  margin-left: 75px;
+}
+
+
+.ult_jogos {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.ult_jogos p {
+  display: flex;
+  justify-content: center;
+}
+
+.z img {
+  margin-bottom: 5px;
+}
+
+.verde {
+  color: green;
+}
+
+.vermelho {
+  color: red;
+}

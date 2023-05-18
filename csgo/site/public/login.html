@@ -88,11 +88,16 @@ else {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUsuario;
-                sessionStorage.TIME = json.fktimej;
+                sessionStorage.TIME = json.fktime;
 
                 setTimeout(function () {
-                   
-                        window.location =  "./dashboard/dashMibr.html";
+                   if(sessionStorage.TIME  == 1){
+                       window.location =  "./dashboard/dashImpe.html";
+                   } else if(sessionStorage.TIME == 2){
+                        window.location = "./dashboard/dashMibr.html"
+                   } else if(sessionStorage.TIME == 3){
+                    window.location = "./dashboard/dashMibr.html"
+                   }
                    
                 }, 3000); // apenas para exibir o loading
 

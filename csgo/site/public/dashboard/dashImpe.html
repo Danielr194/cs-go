@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imperial</title>
 
-    <link rel="stylesheet" href="../css/dash.css">
-    <script src="../js/funcoes.js"></script>
-    <!-- scripts do Chart.js - 2022-1 -->
+    <link rel="stylesheet" href="./dashimp.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3f0399636b.js" crossorigin="anonymous"></script>
+    <script src="../js/funcoes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
 
-<body>
+<body >
     <div class="header">
         <div class="nav">
             <ul class="links">
@@ -127,7 +127,7 @@
         <h2>Ultimos jogos da Imperial:</h2>
         <div class="ult_jogos">
         <div class="imp">
-            <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="78px" >
+            <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px" >
             <p><b>Imperial</b></p>
             <p class="verde"><b>1</b></p>
         </div>
@@ -138,7 +138,7 @@
             </div>
             <hr>
             <div class="imp">
-            <img src="../assets/dash/Imperial-esports-logo.png" alt=""  width="80px">
+            <img src="../assets/dash/Imperial-esports-logo.png" alt=""  width="70px">
             <p><b>Imperial</b></p>
             <p class="verde"><b>1</b></p>
             </div>
@@ -201,6 +201,7 @@
     function plotarGrafico(resposta, idAquario) {
         console.log('iniciando plotagem do gráfico...');
 
+    
         var dados = {
             labels: [],
             datasets: [
@@ -210,25 +211,8 @@
                     data: []
                 },
                 {
-                    yAxisID: 'y-totalpersonagens',
-                    label: 'Personagem Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
-                    fill: true,
-                    data: []
-                }
-            ]
-        };
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    label: '',
-
-                    data: []
-                },
-                {
-                    yAxisID: 'y-totalpersonagens',
-                    label: 'Personagem Favorito',
+                    yAxisID: 'y-timefavoritos',
+                    label: 'time Favorito',
                     backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
                     fill: true,
                     data: []
@@ -238,8 +222,8 @@
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            dados.labels.push(registro.personagem);
-            dados.datasets[0].data.push(registro.personagem);
+            dados.labels.push(registro.time);
+            dados.datasets[0].data.push(registro.time);
             dados.datasets[1].data.push(registro.voto);
             console.log(registro.voto)
 
@@ -266,7 +250,7 @@
                         type: 'linear',
                         display: true,
                         position: 'left',
-                        id: 'y-totalpersonagens',
+                        id: 'y-timefavoritos',
                         ticks: {
                             beginAtZero: true,
                             max: 50,

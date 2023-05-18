@@ -38,9 +38,14 @@ constraint fkQime foreign key(fktime) references time(idTime),
 constraint fkQues foreign key(fkques) references questionario(idquest));
 
 INSERT INTO time VALUES
-(null, 'Imperal', 29, 'Felippe Martins'),
-(null, 'Mibr', 30, 'Felippe Martins'),
-(null, 'Imperal', 29, 'Felippe Martins'),
+(null, 'Imperal', 29, 'Felippe Martins', '2018-03-09'),
+(null, 'Mibr', 30, 'Felippe Martins', '2003-03-01'),
+(null, 'Imperal', 29, 'Felippe Martins', '2017-08-08');
+
+SELECT * FROM usuario;
+
+SELECT COUNT(usuario.fktime) as voto, time.nome AS times 
+        FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;
 
 
 

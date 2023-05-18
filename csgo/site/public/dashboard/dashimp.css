@@ -138,3 +138,61 @@ body{
   align-items: center;
 }
 
+.caixa_camp{
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.caixa_camp h2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.campeonato{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.campeonato img{
+  margin-left: 35px;
+}
+
+
+.jogos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 75px;
+}
+
+.jogos h2{
+  display: flex;
+  justify-content: center;
+}
+.ult_jogos {
+  justify-content: center; 
+  display: flex;
+  gap: 3rem;
+  align-self: center;
+}
+
+
+
+.ult_jogos p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verde {
+  color: green;
+}
+
+.vermelho {
+  color: red;
+}

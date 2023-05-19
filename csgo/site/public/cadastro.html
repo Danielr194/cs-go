@@ -41,7 +41,7 @@
             <input type="text" name="" id="input_senha" placeholder="Senha:"><br><br>
 
 
-            <input type="text" placeholder="Confirmar senha:">
+            <input type="text" id="input_confirmar" placeholder="Confirmar senha:">
             
             <p>Seu time de CS:GO:</p>
             <select id="gender">
@@ -98,6 +98,7 @@
         var senhaVar = input_senha.value;
         var timeVar = gender.value;
         var nivelVar = nivel.value;
+        var confirmarVar = input_confirmar.value;
 
 
         if (nomeVar == "" || nickVar == "" || emailVar == "" || senhaVar == "" || timeVar == "" || nivelVar == "" ) {
@@ -113,8 +114,9 @@
         }
         else if (senhaVar.length < 8) {
             swal("Ops", "A senha inserida é muito curta. Por favor,insira uma senha com pelo menos 8 caracteres 😠", "warning")
-        }
-        else {
+        }else if( confirmarVar != senhaVar){
+                swal("ops", "As senhas estão diferente", "error")
+        } else {
             setInterval('oi', 5000)
         }
             

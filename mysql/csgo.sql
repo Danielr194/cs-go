@@ -17,11 +17,11 @@ dtfundacao date);
 
 CREATE TABLE jogador(
 idjogador INT PRIMARY KEY auto_increment,
-nome varchar(45),
-nickname VARCHAR(45),
-idade DATE,
-nivelGc INT,
-fktimej INT,
+rating2 float ,
+KillsPerRound float ,
+Headshots  float,
+DeathsPerRound float,
+fktimej INT
 constraint fktimej foreign key(fktimej) references time(idTime));
 
 CREATE TABLE usuario(
@@ -48,4 +48,32 @@ SELECT COUNT(usuario.fktime) as voto, time.nome AS times
         FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;
 
 
+
+
+CREATE TABLE jogador(
+idjogador INT PRIMARY KEY auto_increment,
+nick VARCHAR(45)
+rating2 float ,
+KillsPerRound float ,
+Headshots  float,
+DeathsPerRound float,
+fktimej INT
+constraint fktimej foreign key(fktimej) references time(idTime));
+
+INSERT INTO jogador VALUES
+(null, 'Fallen', 1.11, 0.67, 28.6, 0.58, 1),
+(null, 'Boltz', 1.14, 0.70, 37.5, 0.61,1 ),
+(null, 'Chelo', 1.10, 0.68, 58.0, 0.63,1 ),
+(null, 'Vini', 1.05, 0.63, 50.1, 0.63 ,1 ),
+(null, 'Jota', 1.13, 0.69, 42.2, 0.59,1 ),
+(null, 'Hen1', 1.25, 0.74, 31.1, 0.52,2 ),
+(null, 'Exit', 1.17, 0.68, 50, 0.54,2 ),
+(null, 'Tuurtle', 1.09, 0.68, 62.8, 0.61,2 ),
+(null, 'brnz4n', 1.16, 0.72, 55.5, 0.66,2 ),
+(null, 'insani', 1.22, 0.76, 57.3, 0.63,2 ),
+(null, 'arT', 0.98 0.61, 44.0, 0.71,3 ),
+(null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
+(null, 'Kscerato', 1., 0.67, 43.0, 0.64, 3),
+(null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
+(null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
 

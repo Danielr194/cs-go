@@ -189,11 +189,14 @@ body {
 
 /* Pagina de noticias */
 
-
+.container_noticias{
+  display: flex;
+  flex-direction: column ;
+}
 .noticias {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+ 
 
 }
 
@@ -246,13 +249,11 @@ body {
 
 .noticias_prin {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: center;
 }
 
-.eventos {
-  flex-direction: row-reverse;
-}
+
 
 
 /* ULTIMOS JOGOS */

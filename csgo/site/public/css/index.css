@@ -192,12 +192,13 @@ body {
 .container_noticias{
   display: flex;
   flex-direction: column ;
+  
+ 
 }
 .noticias {
   display: flex;
-  flex-direction: column;
- 
-
+  justify-content: center;  
+  gap: 7rem;
 }
 
 .eventos {
@@ -218,6 +219,7 @@ body {
   border: #2C3540 solid;
   background-color: #2C3540;
   justify-content: center;
+  opacity: 90%;
 }
 
 
@@ -226,6 +228,7 @@ body {
   background-color: #2C3540;
   width: 230px;
   padding-left: 13px;
+  opacity: 90%;
 
 }
 
@@ -265,6 +268,7 @@ body {
   margin-top: 250px;
   justify-content: center;
   margin-left: 75px;
+  align-items: center;
 }
 
 
@@ -272,11 +276,13 @@ body {
   display: flex;
   flex-direction: row;
   gap: 3rem;
+
 }
 
 .ult_jogos p {
   display: flex;
   justify-content: center;
+
 }
 
 .z img {
@@ -289,4 +295,40 @@ body {
 
 .vermelho {
   color: red;
+}
+
+
+/* footer */
+
+footer{
+  display: flex;
+  flex-direction: row;
+  border: #2C3540 solid;
+  background-color: #2C3540;
+  opacity: 10px;
+  width: 100%;
+  margin-top: 50px;
+  justify-content: space-around;
+  font-size: large;
+  text-decoration: none;
+  
+ 
+}
+
+.by p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 490px;
+
+}
+
+
+
+.redes_sociais ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-direction: row;
 }

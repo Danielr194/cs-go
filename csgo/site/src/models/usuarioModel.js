@@ -31,8 +31,29 @@ function cadastrar( email, senha, nivelGc, fktime) {
     return database.executar(instrucao);
 }
 
+function cadastrarMapa(fkmapa){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", fkmapa);   
+    var instrucao = ` INSERT INTO questionario(fkmapa) VALUES ('${fkmapa}');`
+    ;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+};
+
+function estatisticaj1(rating2, KillsPerRound, Headshots, DeathsPerRound ) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ",rating2, KillsPerRound, Headshots, DeathsPerRound)
+    var instrucao = `
+    select rating2, KillsPerRound, Headshots, DeathsPerRound from jogador where nick = 'art';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    cadastrarMapa,
+    estatisticaj1
 };

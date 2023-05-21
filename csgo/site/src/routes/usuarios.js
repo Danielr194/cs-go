@@ -20,4 +20,13 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/cadastrarMapa", function (req, res) {
+    usuarioController.cadastrarMapa(req, res);
+});
+
+
+router.get("/estatisticaj1", function (req, res) {
+    usuarioController.estatisticaj1(req, res);
+});
+
 module.exports = router;

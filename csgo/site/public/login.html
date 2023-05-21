@@ -32,7 +32,7 @@
             <div>
             <input type="text" name="" id="email_input" placeholder="Email:"><br><br>
 
-            <input type="text" name="" id="senha_input" placeholder="Senha:"><br><br>
+            <input type="password" name="" id="senha_input" placeholder="Senha:"><br><br>
             <button onclick="entrar()">Login</button>
             <p>Ainda não tem conta?</p>
             <ul class="cadastro">
@@ -59,7 +59,7 @@ if (emailVar == "" || senhaVar == "") {
     return false;
 }
 else {
-    swal("Parábens", "Login realizado com sucesso redirecionando a tela do quiz 😄se divirta...!", "success");
+    swal("Parábens", "Login realizado com sucesso redirecionando a tela do seu time 😄se divirta...!", "success");
     setInterval('...', 2000)
 
 
@@ -96,7 +96,7 @@ else {
                    } else if(sessionStorage.TIME == 2){
                         window.location = "./dashboard/dashMibr.html"
                    } else if(sessionStorage.TIME == 3){
-                    window.location = "./dashboard/dashMibr.html"
+                    window.location = "./dashboard/dashFuria.html"
                    }
                    
                 }, 3000); // apenas para exibir o loading

@@ -265,7 +265,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 250px;
+  margin-top: 150px;
   justify-content: center;
   margin-left: 75px;
   align-items: center;
@@ -311,6 +311,7 @@ footer{
   justify-content: space-around;
   font-size: large;
   text-decoration: none;
+  opacity: 97%;
   
  
 }

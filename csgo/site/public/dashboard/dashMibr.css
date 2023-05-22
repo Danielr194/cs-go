@@ -8,7 +8,7 @@ body{
 .header {
     display: flex;
     border: 50px;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid #F2C230;
     margin-bottom: 15px;
     margin: auto;
     align-items: center;
@@ -52,6 +52,14 @@ body{
   }
 
 
+  .botao{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-left: 65px;
+  }
+
+
 
 .main{
   display: flex;
@@ -81,7 +89,7 @@ body{
   display: flex;
   background-color: black;
   width: fit-content;
-  box-shadow: 10px 8px 8px #030A8C;
+  box-shadow: 10px 8px 8px #F2C230;
   border-radius: 12px;
  
 }
@@ -136,5 +144,81 @@ body{
   margin-right: 15px;
   margin-top: 15px;
   align-items: center;
+}
+
+
+
+.caixa_camp{
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: large;
+
+}
+.caixa_camp h2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.campeonato{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+}
+
+.campeonato img{
+  margin-left: 35px;
+}
+
+
+.jogos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25px;
+  font-size: large;
+
+ 
+}
+
+.jogos h2{
+  display: flex;
+  justify-content: center;
+ 
+}
+.ult_jogos {
+  justify-content: center; 
+  display: flex;
+  gap: 3rem;
+  align-self: center;
+}
+
+.snakes img{
+  padding-left: 15px;
+  
+}
+
+.snakes p{
+  display: flex;
+  margin-top: 0;
+}
+
+.ult_jogos p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verde {
+  color: green;
+}
+
+.vermelho {
+  color: red;
 }
 

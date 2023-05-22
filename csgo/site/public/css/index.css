@@ -13,7 +13,7 @@ body {
 .header {
   display: flex;
   border: 50px;
-  border-bottom: 2px solid;
+  border-bottom: 2px solid #2C3540;
   margin-bottom: 15px;
   margin: auto;
 }
@@ -100,16 +100,16 @@ body {
 
 .sobre_cs {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   color: white;
-  margin-top: 1100px;
+  margin-top: 1000px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 500px;
+  margin-bottom: 160px;
 }
 
 .sobre_cs p {
+  display: flex;
   text-align: unset;
   color: white;
   font-size: 20px;
@@ -121,6 +121,35 @@ body {
   font-size: 30px;
 }
 
+.text_cs {
+  display:flex;
+  flex-direction: row;
+  
+}
+
+.skins{
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+}
+
+.skins h3{
+  text-align: unset;
+  color: white;
+  font-size: 28px;
+}
+
+.text_skins{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: justify;
+  gap: 3rem;
+  font-size: 20px;
+  margin-bottom: 120px;
+}
+
+
 
 /* Pergunta */
 .container {
@@ -131,8 +160,9 @@ body {
   text-decoration: none;
   flex-direction: row;
   text-align: center;
-  margin-bottom: 500px;
-  margin-top: 750px;
+margin-bottom: 40px;
+margin-top: 40px;
+  
 }
 
 
@@ -146,7 +176,7 @@ body {
   text-align: center;
   margin: 0;
   margin-bottom: 20px;
-  margin-left: 100px;
+  margin-left: 150px;
   font-size: 18px;
 }
 
@@ -179,7 +209,7 @@ body {
 .caixa button {
   display: flex;
   flex-direction: row;
-  width: 100px;
+  width: 150px;
   justify-content: center;
   font-size: 15px;
   border-radius: 12px;
@@ -242,7 +272,7 @@ body {
   margin-top: 20px;
 }
 
-.ranking h3 {
+.ranking h2 {
   text-align: center;
 }
 
@@ -254,6 +284,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.noticias_prin h2{
+    text-align: center;
 }
 
 

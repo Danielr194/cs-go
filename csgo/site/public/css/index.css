@@ -161,7 +161,7 @@ body {
   flex-direction: row;
   text-align: center;
 margin-bottom: 40px;
-margin-top: 40px;
+margin-top: 15px;
   
 }
 
@@ -215,6 +215,16 @@ margin-top: 40px;
   border-radius: 12px;
   background-color: #F2A663;
   text-align: justify;
+}
+
+.graficos{
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  margin-bottom: 50px;
+  margin-left: 60px;
+  align-items: center;
 }
 
 /* Pagina de noticias */

@@ -35,8 +35,9 @@
         <div>
             <li><img src="../assets/dash/furiaLogo.png" alt="sss" width="50px"></li>
         </div>
-        <div>
-            <p>Seja bem vindo!!!!</p>
+        <div class="texto-user">
+            <span>Bem-vindo</span>
+            <span id="b_usuario"></span>
         </div>
     </div>
     <div class="main">
@@ -166,35 +167,155 @@
 <script>
 
 
-</script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-    const ctx = document.getElementById('myChart');
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['dezembro 2022', 'janeiro', 'fevereiro', 'março', 'abril', 'maio'],
-            datasets: [{
-                label: 'ranking nos ultimos 6 meses',
-                data: [33, 32, 37, 37, 34, 29,],
-                borderWidth: 1,
-                backgroundColor: 'rgb(11,215,101)',
-                borderColor: 'rgb(11,215,101)',
-            },]
-        },
 
+let proximaAtualizacao;
+
+window.onload = obterDadosGrafico(1);
+
+
+function obterDadosGrafico(idAquario) {
+
+    if (proximaAtualizacao != undefined) {
+        clearTimeout(proximaAtualizacao);
+    }
+
+
+    fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                plotarGrafico(resposta, idAquario);
+
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+// A função *plotarGrafico* também invoca a função *atualizarGrafico*
+function plotarGrafico(resposta, idAquario) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var dados = {
+        labels: [],
+        datasets: [
+            {
+                label: '',
+
+                data: []
+            },
+            {
+                yAxisID: 'y-totalpersonagens',
+                label: 'times Favorito',
+                backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
+                fill: true,
+                data: []
+            }
+        ]
+    };
+  
+
+    for (i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        dados.labels.push(registro.times);
+        dados.datasets[0].data.push(registro.times);
+        dados.datasets[1].data.push(registro.voto);
+        console.log(registro.voto)
+
+
+    }
+
+    console.log(JSON.stringify(dados));
+
+    var ctx = myChart.getContext('2d');
+    window.myChart = Chart.Bar(ctx, {
+        data: dados,
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            responsive: true,
+            animation: { duration: 900 },
+            hoverMode: 'index',
+            stacked: false,
+            title: {
+                display: true,
+                text: 'Quantidade de fans por time:'
+            },
 
-                }
+            scales: {
+                yAxes: [{
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    id: 'y-totalpersonagens',
+                    ticks: {
+                        beginAtZero: true,
+                        max: 50,
+                        min: 0
+                    }
+                }, {
+                    display: false,
+                }],
             }
         }
     });
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(dados);
+
+                    for (i = 0; i < novoRegistro.length; i++) {
+                        var registro = novoRegistro[i];
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(registro.times);// incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
+
+                        dados.datasets[1].data.shift();
+                        dados.datasets[1].data.push(registro.voto);
+                    }
+
+                    window.myChart.update();
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+}
+</script> 
 
 </script>

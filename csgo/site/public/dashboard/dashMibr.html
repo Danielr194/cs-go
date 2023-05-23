@@ -39,8 +39,9 @@
         <div>
             <li><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="70px"></li>
         </div>
-        <div>
-            <p>Seja bem vindo!!!!</p>
+        <div class="texto-user">
+            <span>Bem-vindo</span>
+            <span id="b_usuario"></span>
         </div>
     </div>
     <div class="main">
@@ -165,8 +166,8 @@
 <script>
 
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
-
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    
 
 
     let proximaAtualizacao;
@@ -213,35 +214,19 @@
                 },
                 {
                     yAxisID: 'y-totalpersonagens',
-                    label: 'Personagem Favorito',
+                    label: 'times Favorito',
                     backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
                     fill: true,
                     data: []
                 }
             ]
         };
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    label: '',
-
-                    data: []
-                },
-                {
-                    yAxisID: 'y-totalpersonagens',
-                    label: 'Personagem Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
-                    fill: true,
-                    data: []
-                }
-            ]
-        }
+      
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            dados.labels.push(registro.personagem);
-            dados.datasets[0].data.push(registro.personagem);
+            dados.labels.push(registro.times);
+            dados.datasets[0].data.push(registro.times);
             dados.datasets[1].data.push(registro.voto);
             console.log(registro.voto)
 
@@ -260,7 +245,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Os Personagens mais Escolhidos'
+                    text: 'Quantidade de fans por time:'
                 },
 
                 scales: {
@@ -281,8 +266,6 @@
             }
         });
 
-        
-        
 
         // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
         // buscando a última medida inserida em tabela contendo as capturas, 
@@ -302,10 +285,10 @@
                             var registro = novoRegistro[i];
                             // tirando e colocando valores no gráfico
                             dados.labels.shift(); // apagar o primeiro
-                            dados.labels.push(registro.personagem);// incluir um novo momento
+                            dados.labels.push(registro.times);// incluir um novo momento
 
                             dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                            dados.datasets[0].data.push(registro.personagem); // incluir uma nova medida de umidade
+                            dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
 
                             dados.datasets[1].data.shift();
                             dados.datasets[1].data.push(registro.voto);

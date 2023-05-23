@@ -39,6 +39,9 @@ function cadastrarMapa(fkmapa){
     return database.executar(instrucao);
 };
 
+
+
+
 function estatisticaj1(rating2, KillsPerRound, Headshots, DeathsPerRound ) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ",rating2, KillsPerRound, Headshots, DeathsPerRound)
     var instrucao = `

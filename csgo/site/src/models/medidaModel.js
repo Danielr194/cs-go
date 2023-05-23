@@ -7,10 +7,11 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `SELECT COUNT(usuario.fktime) as voto, time.nome AS times 
         FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;`;
+        
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `SELECT COUNT(usuario.fktime) as voto, time.nome AS times 
-        FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;
-`;
+        FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;`;
+    
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -25,22 +26,12 @@ function buscarMedidasEmTempoReal(idAquario) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top 1
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,  
-                        CONVERT(varchar, momento, 108) as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc`;
+        instrucaoSql =   `SELECT COUNT(questionario.fkmapa) as voto, mapa.Nomemapa as mapa  
+        FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc limit 1`;
+        instrucaoSql = `SELECT COUNT(questionario.fkmapa) as voto, mapa.Nomemapa as mapa  
+        FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

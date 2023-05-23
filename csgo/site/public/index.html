@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="./assets/index/Logo_csgo.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./dashimp.css">
@@ -125,10 +126,10 @@
                         </select><br>
                     </div>
                     <button onclick="cadastrarMapa()">Selecionar</button>
+                    <div class="graficos">
+                        <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
             </div>
         </div>
 
@@ -257,22 +258,15 @@
                 mapaServer: mapaVar,
 
             })
-        }).then(function (resposta) {
+        })
 
-console.log("resposta: ", resposta);
 
-if (resposta.ok) {
-    //cardErro.style.display = "block";
-    swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
-      }
-    });
+ }
+   
 
-return false;
-
-let proximaAtualizacao;
+        let proximaAtualizacao;
 
 window.onload = obterDadosGrafico(1);
-window.onload = obterDadosGrafico(2);
 
 
 function obterDadosGrafico(idAquario) {
@@ -313,45 +307,23 @@ function plotarGrafico(resposta, idAquario) {
                 data: []
             },
             {
-                yAxisID: 'y-totalpersonagens',
-                label: 'Personagem Favorito',
+                yAxisID: 'y-totalmapa',
+                label: 'mapa Favorito',
                 backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
                 fill: true,
                 data: []
             }
         ]
     };
-    var dados2 = {
-        labels: [],
-        datasets: [
-            {
-                label: '',
-
-                data: []
-            },
-            {
-                yAxisID: 'y-media',
-                label: 'media',
-                backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
-                fill: true,
-                data: []
-            }
-        ]
-    }
+  
 
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
-        dados.labels.push(registro.personagem);
-        dados.datasets[0].data.push(registro.personagem);
+        dados.labels.push(registro.mapa);
+        dados.datasets[0].data.push(registro.mapa);
         dados.datasets[1].data.push(registro.voto);
         console.log(registro.voto)
 
-        for (i = 0; i < resposta.length; i++) {
-        var registro2 = resposta[i];
-        dados.labels.push(registro.media);
-        dados.datasets[0].data.push(registro.media);
-        dados.datasets[1].data.push(registro.media);
-        console.log(registro.media)
 
     }
 
@@ -367,7 +339,7 @@ function plotarGrafico(resposta, idAquario) {
             stacked: false,
             title: {
                 display: true,
-                text: 'Os Personagens mais Escolhidos'
+                text: 'Os mapas mais Escolhidos'
             },
 
             scales: {
@@ -375,10 +347,10 @@ function plotarGrafico(resposta, idAquario) {
                     type: 'linear',
                     display: true,
                     position: 'left',
-                    id: 'y-totalpersonagens',
+                    id: 'y-totalmapa',
                     ticks: {
                         beginAtZero: true,
-                        max: 50,
+                        max: 75,
                         min: 0
                     }
                 }, {
@@ -388,61 +360,50 @@ function plotarGrafico(resposta, idAquario) {
         }
     });
 
-}}
 
-function atualizarGrafico(idAquario, dados) {
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
 
-fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
-        response.json().then(function (novoRegistro) {
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados) {
 
-            console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-            console.log(dados);
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
 
-            for (i = 0; i < novoRegistro.length; i++) {
-                var registro = novoRegistro[i];
-                // tirando e colocando valores no gráfico
-                dados.labels.shift(); // apagar o primeiro
-                dados.labels.push(registro.personagem);// incluir um novo momento
+                    console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(dados);
 
-                dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                dados.datasets[0].data.push(registro.personagem); // incluir uma nova medida de umidade
+                    for (i = 0; i < novoRegistro.length; i++) {
+                        var registro = novoRegistro[i];
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(registro.mapa);// incluir um novo momento
 
-                dados.datasets[1].data.shift();
-                dados.datasets[1].data.push(registro.voto);
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(registro.mapa); // incluir uma nova medida de umidade
+
+                        dados.datasets[1].data.shift();
+                        dados.datasets[1].data.push(registro.voto);
+                    }
+
+                    window.myChart.update();
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
             }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
 
-            
-            for (i = 0; i < novoRegistro.length; i++) {
-                var registro = novoRegistro[i];
-                // tirando e colocando valores no gráfico
-                dados.labels.shift(); // apagar o primeiro
-                dados.labels.push(registro.media);// incluir um novo momento
-
-                dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                dados.datasets[0].data.push(registro.media); // incluir uma nova medida de umidade
-
-                dados.datasets[1].data.shift();
-                dados.datasets[1].data.push(registro.media);
-            }
-
-            window.myChart.update();
-
-            // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
-        });
-    } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
     }
-})
-    .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
 
 }
-
-}
-
-</script>
+</script> 

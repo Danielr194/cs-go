@@ -17,7 +17,7 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
 
-<body >
+<body>
     <div class="header">
         <div class="nav">
             <ul class="links">
@@ -50,36 +50,40 @@
                 <div class="jogadores">
                     <img src="../assets/dash/fallen.webp" alt="" width="235px">
                     <h3>Fallen</h3>
-                    <button  class="botao" onclick="estatistica()">ver performace</button>
-                    <span id="exibir"></span>
+                    <button class="botao" onclick="estatisticaf()">ver performace</button>
+                    <span id="fallen"></span>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/boltz.webp" alt="" width="235px">
                     <h3>Boltz</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticab()">ver performace</button>
+                    <p id="boltz"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/chelo.webp" alt="" width="235px">
                     <h3>chelo</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticac()">ver performace</button>
+                    <p id="chelo"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/vini.webp" alt="" width="235px">
                     <h3>vini</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticav()">ver performace</button>
+                    <p id="vini"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/jota.webp" alt="" width="235px">
                     <h3>jota</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticaj()">ver performace</button>
+                    <p id="jota"></p>
                 </div>
             </div>
         </div>
@@ -95,62 +99,66 @@
             <div>
                 <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
             </div>
-           
+
             <div class="caixa_mapas">
                 <h2>Vitorias por mapa mais jogados:</h2>
-                <div class="mapas_com_mais_v"> 
+                <div class="mapas_com_mais_v">
                     <div>
                         <h3>Nuke</h3>
                         <h3>66.7%</h3>
                     </div>
                     <div>
-                    <h3>Anciente</h3>
-                    <h3>60%</h3>
-                </div>
-                <div>
-                    <h3>Ouverpass</h3>
-                    <h3>55.6%</h3>
-                </div>
-                <div>
-                    <h3>Mirage</h3>
-                    <h3>50%</h3>
+                        <h3>Anciente</h3>
+                        <h3>60%</h3>
+                    </div>
+                    <div>
+                        <h3>Ouverpass</h3>
+                        <h3>55.6%</h3>
+                    </div>
+                    <div>
+                        <h3>Mirage</h3>
+                        <h3>50%</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="jogos">
-      <h2>  Proximos campeonatos:</h2>
-      <ul class="campeonato">
-        <li><img src="../assets/dash/blast.png" alt="" width="50px"><P>Blast premier spring final 2023</P> </li>
-        <li><img src="../assets/dash/fire.png" alt="" width="63px"><p>Fire league</p></li>
-    </ul>
-    </div>
+        <div class="jogos">
+            <h2> Proximos campeonatos:</h2>
+            <ul class="campeonato">
+                <li><img src="../assets/dash/blast.png" alt="" width="50px">
+                    <P>Blast premier spring final 2023</P>
+                </li>
+                <li><img src="../assets/dash/fire.png" alt="" width="63px">
+                    <p>Fire league</p>
+                </li>
+            </ul>
+        </div>
 
-    <div class="jogos">
-        <h2>Ultimos jogos da Imperial:</h2>
-        <div class="ult_jogos">
-        <div class="imp">
-            <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px" >
-            <p><b>Imperial</b></p>
-            <p class="verde"><b>1</b></p>
-        </div>
-        <div class="Sprout" >
-            <img src="../assets/dash/sprout.ico" alt="" width="78px">
-            <p><b>Paqueta</b></p>
-            <p class="vermelho"><b>2</b></p>
+        <div class="jogos">
+            <h2>Ultimos jogos da Imperial:</h2>
+            <div class="ult_jogos">
+                <div class="imp">
+                    <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
+                    <p><b>Imperial</b></p>
+                    <p class="verde"><b>1</b></p>
+                </div>
+                <div class="Sprout">
+                    <img src="../assets/dash/sprout.ico" alt="" width="78px">
+                    <p><b>Paqueta</b></p>
+                    <p class="vermelho"><b>2</b></p>
+                </div>
+                <hr>
+                <div class="imp">
+                    <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
+                    <p><b>Imperial</b></p>
+                    <p class="verde"><b>1</b></p>
+                </div>
+                <div class="ine">
+                    <img src="../assets/dash/9iner.png" alt="" width="80px">
+                    <p><b>Forward</b></p>
+                    <p class="vermelho"><b>2</b></p>
+                </div>
             </div>
-            <hr>
-            <div class="imp">
-            <img src="../assets/dash/Imperial-esports-logo.png" alt=""  width="70px">
-            <p><b>Imperial</b></p>
-            <p class="verde"><b>1</b></p>
-            </div>
-            <div class="ine">
-                <img src="../assets/dash/9iner.png" alt="" width="80px">
-            <p><b>Forward</b></p>
-            <p class="vermelho"><b>2</b></p>
-            </div>
-        </div>
         </div>
     </div>
 
@@ -161,13 +169,112 @@
 </body>
 
 </html>
+<script>
+    var estatisticaJogador;
+    function estatisticaJogador(idAquario) {
+        fetch(`/medidas/estatis/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico(resposta, idAquario);
+                    estatisticaJogador(resposta)
+                    console.log(response)
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function estatisticaf() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                    document.getElementById('fallen').innerHTML = JSON.stringify(json[0]);
+                    
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticab() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                
+                    document.getElementById('boltz').innerHTML = JSON.stringify(json[1]);
+                    
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticac() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                
+                    document.getElementById('chelo').innerHTML = JSON.stringify(json[2]);
+                    
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticav() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                
+                    document.getElementById('vini').innerHTML = JSON.stringify(json[3]);
+                    
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticaj() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                
+                    document.getElementById('jota').innerHTML = JSON.stringify(json[4]);
+                    
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+</script>
 
 
 <script>
 
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO
-    
+
 
 
     let proximaAtualizacao;
@@ -215,13 +322,13 @@
                 {
                     yAxisID: 'y-totalpersonagens',
                     label: 'times Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
+                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000'],
                     fill: true,
                     data: []
                 }
             ]
         };
-      
+
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
@@ -256,7 +363,7 @@
                         id: 'y-totalpersonagens',
                         ticks: {
                             beginAtZero: true,
-                            max: 50,
+                            max: 15,
                             min: 0
                         }
                     }, {
@@ -312,4 +419,4 @@
         }
 
     }
-</script> 
+</script>

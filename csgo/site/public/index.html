@@ -266,17 +266,17 @@
 
         let proximaAtualizacao;
 
-window.onload = obterDadosGrafico(1);
+window.onload = buscarMedidasEmTempoReal(1);
 
 
-function obterDadosGrafico(idAquario) {
+function buscarMedidasEmTempoReal(idAquario) {
 
     if (proximaAtualizacao != undefined) {
         clearTimeout(proximaAtualizacao);
     }
 
 
-    fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             response.json().then(function (resposta) {
                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);

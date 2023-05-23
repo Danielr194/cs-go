@@ -40,10 +40,10 @@ constraint fkQime foreign key(fktime) references time(idTime));
 INSERT INTO time VALUES
 (null, 'Imperal', 29, 'Felippe Martins', '2018-03-09'),
 (null, 'Mibr', 30, 'Paulo Velloso', '2003-03-01'),
-(null, 'Imperal', 09, 'Jaime Pádua', '2017-08-08');
+(null, 'Furia', 09, 'Jaime Pádua', '2017-08-08');
 
 
-UPDATE time set fundador  = 'Paulo Velloso' where idTime = 2;
+UPDATE time set nome  = 'Furia' where idTime = 3;
 SELECT * FROM time;
 
 SELECT COUNT(usuario.fktime) as voto, time.nome AS times 
@@ -77,12 +77,12 @@ INSERT INTO mapa VALUES
 (null, 'Nuke');
 
 
-SELECT * FROM usuario;
+SELECT * FROM mapa;
 
 SELECT COUNT(questionario.fkmapa) as voto, Nomemapa  
         FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;
 
 	
 
-select rating2, KillsPerRound, Headshots, DeathsPerRound from jogador where nick = 'art';
+select rating2, KillsPerRound, Headshots, DeathsPerRound from jogador;
 

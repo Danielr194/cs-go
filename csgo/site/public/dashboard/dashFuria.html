@@ -166,12 +166,8 @@
 </html>
 <script>
 
-
-
-
-
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO
-    
+
 
 
 let proximaAtualizacao;
@@ -217,15 +213,15 @@ function plotarGrafico(resposta, idAquario) {
                 data: []
             },
             {
-                yAxisID: 'y-totalpersonagens',
+                yAxisID: 'y-totaltimes',
                 label: 'times Favorito',
-                backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
+                backgroundColor: ['#0BD765', '#FFFF00', '#030A8C'],
                 fill: true,
                 data: []
             }
         ]
     };
-  
+
 
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
@@ -257,10 +253,10 @@ function plotarGrafico(resposta, idAquario) {
                     type: 'linear',
                     display: true,
                     position: 'left',
-                    id: 'y-totalpersonagens',
+                    id: 'y-totaltimes',
                     ticks: {
                         beginAtZero: true,
-                        max: 50,
+                        max: 15,
                         min: 0
                     }
                 }, {
@@ -318,4 +314,3 @@ function plotarGrafico(resposta, idAquario) {
 }
 </script> 
 
-</script>

@@ -22,7 +22,7 @@
         <div class="nav">
             <ul class="links">
                 <li>
-                    <a href="./index.html">Home</a>
+                    <a href="../index.html">Home</a>
                 </li>
                 <li>
                     <a href="#">Eventos</a>
@@ -46,12 +46,12 @@
         </div>
 
         <div class="container">
-            <div id="exibir" class="caixa">
+            <div  class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/fallen.webp" alt="" width="235px">
                     <h3>Fallen</h3>
                     <button class="botao" onclick="estatisticaf()">ver performace</button>
-                    <span id="fallen"></span>
+                    <p  class="performace" id="fallen"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -59,7 +59,7 @@
                     <img src="../assets/dash/boltz.webp" alt="" width="235px">
                     <h3>Boltz</h3>
                     <button class="botao" onclick="estatisticab()">ver performace</button>
-                    <p id="boltz"></p>
+                    <p  class="performace" id="boltz"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -67,7 +67,7 @@
                     <img src="../assets/dash/chelo.webp" alt="" width="235px">
                     <h3>chelo</h3>
                     <button class="botao" onclick="estatisticac()">ver performace</button>
-                    <p id="chelo"></p>
+                    <p  class="performace" id="chelo"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -75,7 +75,7 @@
                     <img src="../assets/dash/vini.webp" alt="" width="235px">
                     <h3>vini</h3>
                     <button class="botao" onclick="estatisticav()">ver performace</button>
-                    <p id="vini"></p>
+                    <p  class="performace" id="vini"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -83,7 +83,7 @@
                     <img src="../assets/dash/jota.webp" alt="" width="235px">
                     <h3>jota</h3>
                     <button class="botao" onclick="estatisticaj()">ver performace</button>
-                    <p id="jota"></p>
+                    <p  class="performace" id="jota"></p>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
             <h2> Proximos campeonatos:</h2>
             <ul class="campeonato">
                 <li><img src="../assets/dash/blast.png" alt="" width="50px">
-                    <P>Blast premier spring final 2023</P>
+                    <a href="./blastPremier.html">BLAST Premier Spring Final</a>
                 </li>
                 <li><img src="../assets/dash/fire.png" alt="" width="63px">
                     <p>Fire league</p>
@@ -170,25 +170,9 @@
 
 </html>
 <script>
-    var estatisticaJogador;
-    function estatisticaJogador(idAquario) {
-        fetch(`/medidas/estatis/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico(resposta, idAquario);
-                    estatisticaJogador(resposta)
-                    console.log(response)
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
+  
 
+    var estatisticaJogador;
     function estatisticaf() {
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
@@ -196,6 +180,7 @@
 
                     console.log(json)
                     document.getElementById('fallen').innerHTML = JSON.stringify(json[0]);
+                    
                     
                 })
                 // estatisticaJogador = response.json()
@@ -320,9 +305,9 @@
                     data: []
                 },
                 {
-                    yAxisID: 'y-totalpersonagens',
+                    yAxisID: 'y-totaltimes',
                     label: 'times Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000'],
+                    backgroundColor: ['#0BD765', '#FFFF00', '#030A8C'],
                     fill: true,
                     data: []
                 }
@@ -360,7 +345,7 @@
                         type: 'linear',
                         display: true,
                         position: 'left',
-                        id: 'y-totalpersonagens',
+                        id: 'y-totaltimes',
                         ticks: {
                             beginAtZero: true,
                             max: 15,
@@ -420,3 +405,4 @@
 
     }
 </script>
+

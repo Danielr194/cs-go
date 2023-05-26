@@ -67,6 +67,7 @@ body{
   justify-content: center;
   font-weight: 900;
   font-size: 38px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
@@ -81,6 +82,7 @@ body{
 
 .caixa{
   display: flex;
+  justify-content: center;
   background-color: black;
   width: fit-content;
   box-shadow: 10px 8px 8px #0BD765;
@@ -89,6 +91,12 @@ body{
 }
 .jogadores h3 {
   text-align: center;
+}
+
+.performace{
+  display: flex;
+  flex-direction: column;
+  
 }
 
 

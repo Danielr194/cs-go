@@ -47,6 +47,11 @@ body{
     gap: 3rem;
   }
  
+  .crescer:hover{
+    transition: all 0.5s;
+    transform: scale(1.2);
+  }
+
 
   .bemvindo{
     display: flex;
@@ -101,6 +106,13 @@ body{
 }
 .jogadores h3 {
   text-align: center;
+}
+
+.botao{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin-left: 65px;
 }
 
 

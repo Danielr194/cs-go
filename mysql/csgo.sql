@@ -66,9 +66,6 @@ INSERT INTO jogador VALUES
 (null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
 (null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3);
 
-CREATE TABLE mapa(
-idmapa INT PRIMARY KEY auto_increment,
-Nomemapa VARCHAR(45));
 
 INSERT INTO mapa VALUES
 (null, 'Mirage'),
@@ -77,7 +74,7 @@ INSERT INTO mapa VALUES
 (null, 'Nuke');
 
 
-SELECT * FROM mapa;
+SELECT * FROM jogador;
 
 SELECT COUNT(questionario.fkmapa) as voto, Nomemapa  
         FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;

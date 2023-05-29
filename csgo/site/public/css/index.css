@@ -162,7 +162,6 @@ body {
   text-align: center;
 margin-bottom: 40px;
 margin-top: 15px;
-  
 }
 
 
@@ -260,6 +259,7 @@ margin-top: 15px;
   background-color: #2C3540;
   justify-content: center;
   opacity: 90%;
+  box-shadow: 15px 9px 9px black;
 }
 
 
@@ -269,6 +269,7 @@ margin-top: 15px;
   width: 230px;
   padding-left: 13px;
   opacity: 90%;
+  box-shadow: 15px 9px 9px black;
 
 }
 

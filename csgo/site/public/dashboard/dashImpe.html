@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="caminho_time">
-            <li><a href="./dashMibr.html"><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="60px"></a>
+            <li><a  href="./dashMibr.html"><img class="crescer"  src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="60px"></a>
             </li>
-            <li><a href="./dashFuria.html"><img src="../assets/dash/furiaLogo.png" alt="" width="35px"></a></li>
+            <li><a href="./dashFuria.html"><img class="crescer" src="../assets/dash/furiaLogo.png" alt="" width="35px"></a></li>
 
         </div>
     </div>
@@ -164,10 +164,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    var fallen = json[0];
                     console.log(json)
-                    document.getElementById('fallen').innerHTML = JSON.stringify(json[0]);
-
+                    document.getElementById('fallen').innerHTML     = ""
+                    document.getElementById('fallen').innerHTML += `<p class='cards'>Rating2: ${fallen.rating2}</p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'>KillsPerRound: ${fallen.KillsPerRound}</p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'>Headshots: ${fallen.Headshots}%</p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'>DeathsPerRound: ${fallen.DeathsPerRound}</p>`;
 
                 })
                 // estatisticaJogador = response.json()
@@ -182,8 +185,15 @@
                 response.json().then(function (json) {
 
                     console.log(json)
+                    var boltz = json[1]
+                    document.getElementById('boltz').innerHTML = ``;
+                    document.getElementById('boltz').innerHTML += `<p class='cards' >Rating2: ${boltz.rating2}</p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards' >KillsPerRound:  ${boltz.KillsPerRound}</p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards' >Headshots: ${boltz.Headshots}%</p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards' >DeathsPerRound: ${boltz.DeathsPerRound}</p>`;
+                    
 
-                    document.getElementById('boltz').innerHTML = JSON.stringify(json[1]);
+               
 
                 })
                 // estatisticaJogador = response.json()
@@ -198,8 +208,12 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-
-                    document.getElementById('chelo').innerHTML = JSON.stringify(json[2]);
+                    var chelo = json[2]
+                    document.getElementById('chelo').innerHTML += `<p class='cards'> Rating2: ${chelo.rating2}</p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'> KillsPerRound: ${chelo.KillsPerRound}</p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'> Headshots: ${chelo.Headshots}%</p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'> DeathsPerRound: ${chelo.DeathsPerRound}</p>`
+    
 
                 })
                 // estatisticaJogador = response.json()
@@ -214,8 +228,11 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-
-                    document.getElementById('vini').innerHTML = JSON.stringify(json[3]);
+                    var vini = json[3]
+                    document.getElementById('vini').innerHTML += `<p class='cards'> Rating: ${vini.rating2}</p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'> KillsPerRound: ${vini.KillsPerRound}</p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'> Headshots: ${vini.Headshots}%</p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'> DeathsPerRound: ${vini.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -228,10 +245,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('jota').innerHTML += ''
                     console.log(json)
-
-                    document.getElementById('jota').innerHTML = JSON.stringify(json[4]);
+                    var jota = json[4]
+                    document.getElementById('jota').innerHTML += `<p class='cards'> Rating2: ${jota.rating2}</p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'> kills per Round: ${jota.KillsPerRound}</p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'> Headshots: ${jota.Headshots}</p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'> Rating2: ${jota.rating2}</p>`
 
                 })
                 // estatisticaJogador = response.json()

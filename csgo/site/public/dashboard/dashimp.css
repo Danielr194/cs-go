@@ -46,6 +46,11 @@ body{
     gap: 3rem;
   }
 
+  .crescer:hover{
+    transition: all 0.5s;
+    transform: scale(1.2);
+  }
+
   .img_impe{
     display: flex;
     justify-content: center;
@@ -95,7 +100,7 @@ body{
 }
 
 .caixa{
-  display: flex;
+  display: block;
   justify-content: center;
   background-color: black;
   width: fit-content;
@@ -108,9 +113,16 @@ body{
 }
 
 .performace{
-  display: flex;
+  display: block;
   flex-direction: column;
   
+}
+
+.cards {
+  transition: all 5s;
+  display: flex;
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 

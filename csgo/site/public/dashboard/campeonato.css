@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -70,14 +71,15 @@ body{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
+  margin-top: 75px;
+  color: blue ;
 
 }
 
 .caixa{
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: white;
   width: fit-content;
   border-radius: 12px;
   align-items: center;
@@ -87,34 +89,88 @@ body{
   text-align: center;
 }
 
-.desc{
-  display: flex;
-  font-size: 20px;
-  flex-direction: row;
-  gap: 3rem;
-  justify-content: center;
-
-
-}
-
 .titulo_img{
   display: flex;
-  text-align: start;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
   margin-top: 0;
   flex-direction: row;
   gap: 3rem;
+  
 }
+.desc{
+  display: flex;
+  font-size: 23px;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: space-around;
+
+
+}
+
 .desc_1{
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-around;
   text-align: center;
+  font-size:20px;
+  margin-bottom: 25px;
+  
 }
 .times{
-  margin-top: 250px;
+  justify-content: center;
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  gap: 4rem;
   justify-self: center;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
+  align-items: center;
+}
+
+.titulo_times{
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+}
+
+.times p{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+
+}
+
+.times_fire{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  margin-bottom: 35px;
+  margin-left: 60px;
+  margin-right: 35px;
+  align-items: center;
+}
+
+.caixa_time{
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  color: blue;
+  border: 2px black solid;
+  border-radius: 8px ;
+  box-shadow: 7px 5px 3px 3px black;
+ 
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+div p{
+  display: flex;
+  text-align: center;
 }

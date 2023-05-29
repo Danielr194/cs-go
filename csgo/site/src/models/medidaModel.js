@@ -62,8 +62,23 @@ function estatisticaJogador() {
     return database.executar(instrucaoSql);
 }
 
+
+function graficosDois() {
+
+    var instrucaoSql = '';
+
+    instrucaoSql = `SELECT COUNT(usuario.nivelGc) as voto  
+    FRom  usuario JOIN nivelgc ON  nivelgc.idgc = usuario.NivelGc group by usuario.NivelGc;`;
+
+
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    estatisticaJogador
+    estatisticaJogador,
+    graficosDois
 }

@@ -20,25 +20,22 @@
 <body>
     <div class="header">
         <div class="nav">
-            <ul class="links">
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#">Eventos</a>
-                </li>
-                <li>
-                    <a href="">Ranking</a>
-                </li>
-            </ul>
+            <div class="bemvindo">
+                <span>Bem-vindo</span>
+                <span id="b_usuario"></span>
+            </div>
+            <div class="caminho_time">
+                <div class="img_impe">
+                <li ><img src="../assets/dash/Imperial-esports-logo.png" alt="" width="35px"></li>
+            </div>
         </div>
-        <div>
-            <li><img src="../assets/dash/Imperial-esports-logo.png" alt="" width="35px"></li>
+        <div class="caminho_time">
+            <li><a href="./dashMibr.html"><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="60px"></a>
+            </li>
+            <li><a href="./dashFuria.html"><img src="../assets/dash/furiaLogo.png" alt="" width="35px"></a></li>
+
         </div>
-        <div class="texto-user">
-            <span>Bem-vindo</span>
-            <span id="b_usuario"></span>
-        </div>
+    </div>
     </div>
     <div class="main">
         <div>
@@ -46,12 +43,12 @@
         </div>
 
         <div class="container">
-            <div  class="caixa">
+            <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/fallen.webp" alt="" width="235px">
                     <h3>Fallen</h3>
                     <button class="botao" onclick="estatisticaf()">ver performace</button>
-                    <p  class="performace" id="fallen"></p>
+                    <p class="performace" id="fallen"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -59,7 +56,7 @@
                     <img src="../assets/dash/boltz.webp" alt="" width="235px">
                     <h3>Boltz</h3>
                     <button class="botao" onclick="estatisticab()">ver performace</button>
-                    <p  class="performace" id="boltz"></p>
+                    <p class="performace" id="boltz"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -67,7 +64,7 @@
                     <img src="../assets/dash/chelo.webp" alt="" width="235px">
                     <h3>chelo</h3>
                     <button class="botao" onclick="estatisticac()">ver performace</button>
-                    <p  class="performace" id="chelo"></p>
+                    <p class="performace" id="chelo"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -75,7 +72,7 @@
                     <img src="../assets/dash/vini.webp" alt="" width="235px">
                     <h3>vini</h3>
                     <button class="botao" onclick="estatisticav()">ver performace</button>
-                    <p  class="performace" id="vini"></p>
+                    <p class="performace" id="vini"></p>
                 </div>
             </div>
             <div class="caixa">
@@ -83,7 +80,7 @@
                     <img src="../assets/dash/jota.webp" alt="" width="235px">
                     <h3>jota</h3>
                     <button class="botao" onclick="estatisticaj()">ver performace</button>
-                    <p  class="performace" id="jota"></p>
+                    <p class="performace" id="jota"></p>
                 </div>
             </div>
         </div>
@@ -100,67 +97,57 @@
                 <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
             </div>
 
-            <div class="caixa_mapas">
-                <h2>Vitorias por mapa mais jogados:</h2>
-                <div class="mapas_com_mais_v">
-                    <div>
-                        <h3>Nuke</h3>
-                        <h3>66.7%</h3>
-                    </div>
-                    <div>
-                        <h3>Anciente</h3>
-                        <h3>60%</h3>
-                    </div>
-                    <div>
-                        <h3>Ouverpass</h3>
-                        <h3>55.6%</h3>
-                    </div>
-                    <div>
-                        <h3>Mirage</h3>
-                        <h3>50%</h3>
-                    </div>
-                </div>
+            <!-- <div>
+                <canvas id="myChart2" style=" height:50vh; width:50vw;"></canvas>
+            </div> -->
+            <div class="jogos">
+                <div class="decoracao_camp">
+                <ul >
+                    <li>
+                        <a href="./camp_impe.html">
+                            <h2> Proximos campeonatos:</h2>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="campeonato">
+                    <li><img src="../assets/dash/blast.png" alt="" width="50px">
+                        <p>BLAST Premier Spring Final</p>
+                    </li>
+                    <li><img src="../assets/dash/fire.png" alt="" width="63px">
+                        <p>Fire league</p>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="jogos">
-            <h2> Proximos campeonatos:</h2>
-            <ul class="campeonato">
-                <li><img src="../assets/dash/blast.png" alt="" width="50px">
-                    <a href="./blastPremier.html">BLAST Premier Spring Final</a>
-                </li>
-                <li><img src="../assets/dash/fire.png" alt="" width="63px">
-                    <p>Fire league</p>
-                </li>
-            </ul>
         </div>
 
-        <div class="jogos">
-            <h2>Ultimos jogos da Imperial:</h2>
-            <div class="ult_jogos">
-                <div class="imp">
-                    <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
-                    <p><b>Imperial</b></p>
-                    <p class="verde"><b>1</b></p>
-                </div>
-                <div class="Sprout">
-                    <img src="../assets/dash/sprout.ico" alt="" width="78px">
-                    <p><b>Paqueta</b></p>
-                    <p class="vermelho"><b>2</b></p>
-                </div>
-                <hr>
-                <div class="imp">
-                    <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
-                    <p><b>Imperial</b></p>
-                    <p class="verde"><b>1</b></p>
-                </div>
-                <div class="ine">
-                    <img src="../assets/dash/9iner.png" alt="" width="80px">
-                    <p><b>Forward</b></p>
-                    <p class="vermelho"><b>2</b></p>
+
+            <div class="jogos">
+                <h2>Ultimos jogos da Imperial:</h2>
+                <div class="ult_jogos">
+                    <div class="imp">
+                        <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
+                        <p><b>Imperial</b></p>
+                        <p class="verde"><b>1</b></p>
+                    </div>
+                    <div class="Sprout">
+                        <img src="../assets/dash/sprout.ico" alt="" width="78px">
+                        <p><b>Paqueta</b></p>
+                        <p class="vermelho"><b>2</b></p>
+                    </div>
+                    <hr>
+                    <div class="imp">
+                        <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
+                        <p><b>Imperial</b></p>
+                        <p class="verde"><b>1</b></p>
+                    </div>
+                    <div class="ine">
+                        <img src="../assets/dash/9iner.png" alt="" width="80px">
+                        <p><b>Forward</b></p>
+                        <p class="vermelho"><b>2</b></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
     </div>
@@ -170,7 +157,7 @@
 
 </html>
 <script>
-  
+
 
     var estatisticaJogador;
     function estatisticaf() {
@@ -180,8 +167,8 @@
 
                     console.log(json)
                     document.getElementById('fallen').innerHTML = JSON.stringify(json[0]);
-                    
-                    
+
+
                 })
                 // estatisticaJogador = response.json()
 
@@ -195,9 +182,9 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-                
+
                     document.getElementById('boltz').innerHTML = JSON.stringify(json[1]);
-                    
+
                 })
                 // estatisticaJogador = response.json()
 
@@ -211,9 +198,9 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-                
+
                     document.getElementById('chelo').innerHTML = JSON.stringify(json[2]);
-                    
+
                 })
                 // estatisticaJogador = response.json()
 
@@ -227,9 +214,9 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-                
+
                     document.getElementById('vini').innerHTML = JSON.stringify(json[3]);
-                    
+
                 })
                 // estatisticaJogador = response.json()
 
@@ -243,9 +230,9 @@
                 response.json().then(function (json) {
 
                     console.log(json)
-                
+
                     document.getElementById('jota').innerHTML = JSON.stringify(json[4]);
-                    
+
                 })
                 // estatisticaJogador = response.json()
 
@@ -258,15 +245,15 @@
 <script>
 
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    b_usuario.innerHTML =  sessionStorage.NICKNAME
+
 
 
 
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
-
-
+ 
     function obterDadosGrafico(idAquario) {
 
         if (proximaAtualizacao != undefined) {
@@ -289,6 +276,8 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
+
+    
 
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
@@ -314,6 +303,7 @@
             ]
         };
 
+        
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
@@ -321,9 +311,8 @@
             dados.datasets[0].data.push(registro.times);
             dados.datasets[1].data.push(registro.voto);
             console.log(registro.voto)
-
-
-        }
+        };
+       
 
         console.log(JSON.stringify(dados));
 
@@ -358,13 +347,15 @@
             }
         });
 
+        
+        
 
         // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
         // buscando a última medida inserida em tabela contendo as capturas, 
 
         //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
         //     Para ajustar o "select", ajuste o comando sql em src/models
-        function atualizarGrafico(idAquario, dados) {
+        function atualizarGrafico(idAquario, dados, dados2) {
 
             fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
                 if (response.ok) {
@@ -386,15 +377,18 @@
                             dados.datasets[1].data.push(registro.voto);
                         }
 
+                        
+                       
                         window.myChart.update();
+            
 
                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 2000);
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 200000);
                 }
             })
                 .catch(function (error) {
@@ -405,4 +399,153 @@
 
     }
 </script>
+
+<!-- <script>
+       
+
+
+
+window.onload = buscarMedidasEmTempoReal(1);
+
+
+function buscarMedidasEmTempoReal(idAquario) {
+
+    if (proximaAtualizacao != undefined) {
+        clearTimeout(proximaAtualizacao);
+    }
+
+
+    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                plotarGrafico(resposta, idAquario);
+
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+
+
+// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+// A função *plotarGrafico* também invoca a função *atualizarGrafico*
+function plotarGrafico(resposta, idAquario) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var dados2 = {
+        labels: [],
+        datasets: [
+            {
+                label: '',
+
+                data: []
+            },
+            {
+                yAxisID: 'y-totalmapa',
+                label: 'mapa Favorito',
+                backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
+                fill: true,
+                data: []
+            }
+        ]
+    };
+  
+
+    for (i = 0; i < resposta.length; i++) {
+        var registro = resposta[i];
+        dados2.labels.push(registro.mapa);
+        dados2.datasets[0].data.push(registro.mapa);
+        dados2.datasets[1].data.push(registro.voto);
+        console.log(registro.voto)
+
+
+    }
+
+    console.log(JSON.stringify(dados2));
+
+    var ctx2 = myChart2.getContext('2d');
+    window.myChart2 = Chart.Bar(ctx2, {
+        data: dados2,
+        options: {
+            responsive: true,
+            animation: { duration: 900 },
+            hoverMode: 'index',
+            stacked: false,
+            title: {
+                display: true,
+                text: 'Os mapas mais Escolhidos'
+            },
+
+            scales: {
+                yAxes: [{
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    id: 'y-totalmapa',
+                    ticks: {
+                        beginAtZero: true,
+                        max: 75,
+                        min: 0
+                    }
+                }, {
+                    display: false,
+                }],
+            }
+        }
+    });
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados2) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(dados2);
+
+                    for (i = 0; i < novoRegistro.length; i++) {
+                        var registro = novoRegistro[i];
+                        // tirando e colocando valores no gráfico
+                        dados2.labels.shift(); // apagar o primeiro
+                        dados2.labels.push(registro.mapa);// incluir um novo momento
+
+                        dados2.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados2.datasets[0].data.push(registro.mapa); // incluir uma nova medida de umidade
+
+                        dados2.datasets[1].data.shift();
+                        dados2.datasets[1].data.push(registro.voto);
+                    }
+
+                    window.myChart2.update();
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados2), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados2), 200000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+}
+</script> -->
 

@@ -11,17 +11,18 @@ body{
     border: 50px;
     border-bottom: 2px solid #F2C230;
     margin-bottom: 15px;
+  
     margin: auto;
     align-items: center;
 
   }
   
   .nav {
+    margin-top: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 25px;
-
   }
   
   .nav a{
@@ -31,34 +32,38 @@ body{
   }
   
   .nav a:hover {
-    color: #F2A663;
+    color: #0BD765;
     transition: 0.5 all;
   }
   
-  .links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2rem;
-  }
+ 
   li{
     list-style: none;
-    margin-right: 18px;
   }
 
-  p{
+  .caminho_time{
     display: flex;
-    text-align: center;
-    font-size: 20px;
-  }
-
-
-  .botao{
-    display: flex;
-    justify-self: center;
     align-items: center;
-    margin-left: 65px;
+    gap: 3rem;
   }
+ 
+
+  .bemvindo{
+    display: flex;
+    align-items: center;
+  }
+
+.img_mibr{
+  margin-right: 100px;
+}
+
+.bemvindo{
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  font-size: 25px;
+}
+
 
 
 

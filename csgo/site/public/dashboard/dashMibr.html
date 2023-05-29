@@ -24,25 +24,22 @@
 <body>
     <div class="header">
         <div class="nav">
-            <ul class="links">
-                <li>
-                    <a href="./index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#">Eventos</a>
-                </li>
-                <li>
-                    <a href="">Ranking</a>
-                </li>
-            </ul>
+            <div class="bemvindo">
+                <span>Bem-vindo</span>
+                <span id="b_usuario"></span>
+            </div>
+            <div class="caminho_time">
+            <div class="img_mibr">
+                <li ><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="80px"></li>
+            </div>
         </div>
-        <div>
-            <li><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="70px"></li>
+        <div class="caminho_time">
+            <li><a href="./dashImpe.html"><img src="../assets/dash/Imperial-esports-logo.png" alt="" width="35px"></a>
+            </li>
+            <li><a href="./dashFuria.html"><img src="../assets/dash/furiaLogo.png" alt="" width="35px"></a></li>
+
         </div>
-        <div class="texto-user">
-            <span>Bem-vindo</span>
-            <span id="b_usuario"></span>
-        </div>
+    </div>
     </div>
     <div class="main">
         <div>
@@ -54,35 +51,40 @@
                 <div class="jogadores">
                     <img src="../assets/dash/hen1.jpg" alt="" width="235px">
                     <h3>Hen1</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticaH()">ver performace</button>
+                    <p class="performace" id="hen1"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/exit.jpg" alt="" width="235px" >
                     <h3> Exit   </h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticaE()">ver performace</button>
+                    <p class="performace" id="exit"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/turttle.jpg" alt="" width="235px">
                     <h3>Turttle</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticaT()">ver performace</button>
+                    <p class="performace" id="turttle"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/brnz4.jpg" alt="" width="235px">
-                    <h3>Brn4n</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <h3>brnz4n</h3>
+                    <button class="botao" onclick="estatisticaB()">ver performace</button>
+                    <p class="performace" id="brnz4"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/insani.jpg" alt="" width="235px">
                     <h3>Insani</h3>
-                    <button class="botao" onclick="estatistica()">ver performace</button>
+                    <button class="botao" onclick="estatisticaI()">ver performace</button>
+                    <p class="performace" id="insani"></p>
                 </div>
             </div>
         </div>
@@ -120,12 +122,22 @@
             </div>
         </div>
     </div>
-    <div class="caixa_camp">
-      <h2>  Proximos campeonatos:</h2>
-      <ul class="campeonato">
-        <li><img src="../assets/dash/iemdallas.webp" alt="" width="50px"><P>IEM Dallas 2023</P> </li>
-        <li><img src="../assets/dash/gamers8.webp" alt="" width="50px"><p>Gamers8 2023</p></li>
-    </ul>
+    <div class="jogos">
+        <ul>
+            <li>
+                <a href="./camp_fumi.html">
+                    <h2> Proximos campeonatos:</h2>
+                </a>
+            </li>
+        </ul>
+        <ul class="campeonato">
+            <li><img src="../assets/dash/blast.png" alt="" width="50px">
+                <p>ESL Pro League Season 18</p>
+            </li>
+            <li><img src="../assets/dash/gamers8.webp" alt="" width="63px">
+                <p>Gamers8 2023</p>
+            </li>
+        </ul>
     </div>
 
     <div class="jogos">
@@ -163,6 +175,88 @@
 </body>
 
 </html>
+<script>
+     var estatisticaJogador;
+    function estatisticaH() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+                    document.getElementById('hen1').innerHTML = JSON.stringify(json[5]);
+
+
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticaE() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+
+                    document.getElementById('exit').innerHTML = JSON.stringify(json[6]);
+
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticaT() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+
+                    document.getElementById('turttle').innerHTML = JSON.stringify(json[7]);
+
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticaB() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+
+                    document.getElementById('brnz4').innerHTML = JSON.stringify(json[8]);
+
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+
+    function estatisticaI() {
+        fetch(`/medidas/estatis`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (json) {
+
+                    console.log(json)
+
+                    document.getElementById('insani').innerHTML = JSON.stringify(json[9]);
+
+                })
+                // estatisticaJogador = response.json()
+
+            }
+        })
+    }
+</script>
 <script>
 
 

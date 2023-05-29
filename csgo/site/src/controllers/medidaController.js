@@ -62,7 +62,7 @@ function estatisticaJogador(req,res){
 
 
 function graficosDois(req,res){
-   
+    
 
     console.log(`Recuperando medidas em tempo real`);
 

@@ -10,17 +10,18 @@ body{
     border: 50px;
     border-bottom: 2px solid #0BD765;
     margin-bottom: 15px;
+  
     margin: auto;
     align-items: center;
 
   }
   
   .nav {
+    margin-top: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 25px;
-
   }
   
   .nav a{
@@ -34,22 +35,35 @@ body{
     transition: 0.5 all;
   }
   
-  .links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 2rem;
-  }
+ 
   li{
     list-style: none;
-
   }
 
-.bem_vindo{
+  .caminho_time{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .img_impe{
+    display: flex;
+    justify-content: center;
+    margin-right: 96px;
+  }
+
+  .bemvindo{
+    display: flex;
+    align-items: center;
+  }
+
+
+
+.bemvindo{
   display: flex;
   text-align: center;
   flex-direction: row;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 
@@ -129,6 +143,7 @@ body{
 .corpo{
   display: flex;
   justify-content: start;
+  flex-direction: column;
   margin-left: 20px;
   gap: 2rem;
 }
@@ -180,20 +195,30 @@ body{
   justify-content: center;
   gap: 3rem;
   align-items: center;
+
 }
 
 .campeonato img{
   margin-left: 35px;
 }
 
-
 .jogos {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin-top: 25px;
   font-size: large;
- 
+  list-style: none;
+}
+
+
+li{
+  list-style: none;
+}
+
+.jogos a{
+  text-decoration: none;
 }
 
 .jogos h2{

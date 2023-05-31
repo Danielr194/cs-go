@@ -59,7 +59,7 @@ body{
   }
 
 .img_mibr{
-  margin-right: 100px;
+  margin-right: 25px;
 }
 
 .bemvindo{
@@ -113,6 +113,13 @@ body{
   justify-self: center;
   align-items: center;
   margin-left: 65px;
+}
+
+.cards {
+  transition: all 5s;
+  display: flex;
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 

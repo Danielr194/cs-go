@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #30322F;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    border: 50px;
+    border-bottom: 2px solid #F2A663;
+    margin-bottom: 15px;
+    margin: auto;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+  justify-content: center;
+    font-size: 25px;
+    margin-bottom: 8px;
+    margin-top: 6px;
+    
+  }
+  
+  .nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .nav a:hover {
+    color: #F2A663;
+    transition: 0.5 all;
+  }
+
+  .nav li{
+    list-style: none;
+  }
+
+  .links{
+    display: flex;
+    flex-direction: row;
+  }
+
+  
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+  } 
+
+  .historia{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 22px;
+    align-items: center;
+  }
+  .historia li{
+    list-style: none;
+  }
+  .historia a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .historia p{
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .titulo{
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    text-shadow:  15px 9px 9px black;;
+  }
+
+.fans{
+  display: flex;
+  justify-content: center;
+
+}
+  .grafico{
+
+    width: 60vw;
+    height: 60vh;
+  }
+
+.posicao_grafico{
+  display: flex;
+  justify-content: center;
+}
+
+.crescer:hover{
+  transform: scale(1.2);
+  transition: all 0.5s;
+}

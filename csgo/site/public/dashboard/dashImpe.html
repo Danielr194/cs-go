@@ -21,8 +21,8 @@
     <div class="header">
         <div class="nav">
             <div class="bemvindo">
-                <span>Bem-vindo</span>
-                <span id="b_usuario"></span>
+                <span>Bem-vindo         </span>
+                <span id="b_usuario">  </span>
             </div>
             <div class="caminho_time">
                 <div class="img_impe">
@@ -90,6 +90,11 @@
                 <h2>Posição no Ranking:</h2>
                 <h3>#29</h3>
                 <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="50px" height="50px">
+            </div>
+            <div>
+                <ul>
+                    <a href="../HistoriaTimes/Imperial.html"><h2>VEJA A HISTORIA DO SEU TIME!!!</h2></a>
+                </ul>
             </div>
         </div>
         <div class="corpo">
@@ -171,10 +176,8 @@
                     document.getElementById('fallen').innerHTML += `<p class='cards'>KillsPerRound: ${fallen.KillsPerRound}</p>`;
                     document.getElementById('fallen').innerHTML += `<p class='cards'>Headshots: ${fallen.Headshots}%</p>`;
                     document.getElementById('fallen').innerHTML += `<p class='cards'>DeathsPerRound: ${fallen.DeathsPerRound}</p>`;
-
-                })
-                // estatisticaJogador = response.json()
-
+ 
+             })
             }
         })
     }
@@ -270,157 +273,157 @@
 
 
 
-    let proximaAtualizacao;
+//     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1);
+//     window.onload = obterDadosGrafico(1);
  
-    function obterDadosGrafico(idAquario) {
+//     function obterDadosGrafico(idAquario) {
 
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
+//         if (proximaAtualizacao != undefined) {
+//             clearTimeout(proximaAtualizacao);
+//         }
 
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico(resposta, idAquario);
+//         fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (resposta) {
+//                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//                     plotarGrafico(resposta, idAquario);
 
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
+//                 });
+//             } else {
+//                 console.error('Nenhum dado encontrado ou erro na API');
+//             }
+//         })
+//             .catch(function (error) {
+//                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//             });
+//     }
 
     
 
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
-        console.log('iniciando plotagem do gráfico...');
+//     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+//     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+//     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+//     function plotarGrafico(resposta, idAquario) {
+//         console.log('iniciando plotagem do gráfico...');
 
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    label: '',
+//         var dados = {
+//             labels: [],
+//             datasets: [
+//                 {
+//                     label: '',
 
-                    data: []
-                },
-                {
-                    yAxisID: 'y-totaltimes',
-                    label: 'times Favorito',
-                    backgroundColor: ['#0BD765', '#FFFF00', '#030A8C'],
-                    fill: true,
-                    data: []
-                }
-            ]
-        };
+//                     data: []
+//                 },
+//                 {
+//                     yAxisID: 'y-totaltimes',
+//                     label: 'times Favorito',
+//                     backgroundColor: ['#0BD765', '#FFFF00', '#030A8C'],
+//                     fill: true,
+//                     data: []
+//                 }
+//             ]
+//         };
 
         
 
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.times);
-            dados.datasets[0].data.push(registro.times);
-            dados.datasets[1].data.push(registro.voto);
-            console.log(registro.voto)
-        };
+//         for (i = 0; i < resposta.length; i++) {
+//             var registro = resposta[i];
+//             dados.labels.push(registro.times);
+//             dados.datasets[0].data.push(registro.times);
+//             dados.datasets[1].data.push(registro.voto);
+//             console.log(registro.voto)
+//         };
        
 
-        console.log(JSON.stringify(dados));
+//         console.log(JSON.stringify(dados));
 
-        var ctx = myChart.getContext('2d');
-        window.myChart = Chart.Bar(ctx, {
-            data: dados,
-            options: {
-                responsive: true,
-                animation: { duration: 900 },
-                hoverMode: 'index',
-                stacked: false,
-                title: {
-                    display: true,
-                    text: 'Quantidade de fans por time:'
-                },
+//         var ctx = myChart.getContext('2d');
+//         window.myChart = Chart.Bar(ctx, {
+//             data: dados,
+//             options: {
+//                 responsive: true,
+//                 animation: { duration: 900 },
+//                 hoverMode: 'index',
+//                 stacked: false,
+//                 title: {
+//                     display: true,
+//                     text: 'Quantidade de fans por time:'
+//                 },
 
-                scales: {
-                    yAxes: [{
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        id: 'y-totaltimes',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 15,
-                            min: 0
-                        }
-                    }, {
-                        display: false,
-                    }],
-                }
-            }
-        });
+//                 scales: {
+//                     yAxes: [{
+//                         type: 'linear',
+//                         display: true,
+//                         position: 'left',
+//                         id: 'y-totaltimes',
+//                         ticks: {
+//                             beginAtZero: true,
+//                             max: 15,
+//                             min: 0
+//                         }
+//                     }, {
+//                         display: false,
+//                     }],
+//                 }
+//             }
+//         });
 
         
         
 
-        // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-        // buscando a última medida inserida em tabela contendo as capturas, 
+//         // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+//         // buscando a última medida inserida em tabela contendo as capturas, 
 
-        //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-        //     Para ajustar o "select", ajuste o comando sql em src/models
-        function atualizarGrafico(idAquario, dados, dados2) {
+//         //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+//         //     Para ajustar o "select", ajuste o comando sql em src/models
+//         function atualizarGrafico(idAquario, dados, dados) {
 
-            fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (novoRegistro) {
+//             fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+//                 if (response.ok) {
+//                     response.json().then(function (novoRegistro) {
 
-                        console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-                        console.log(dados);
+//                         console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
+//                         console.log(dados);
 
-                        for (i = 0; i < novoRegistro.length; i++) {
-                            var registro = novoRegistro[i];
-                            // tirando e colocando valores no gráfico
-                            dados.labels.shift(); // apagar o primeiro
-                            dados.labels.push(registro.times);// incluir um novo momento
+//                         for (i = 0; i < novoRegistro.length; i++) {
+//                             var registro = novoRegistro[i];
+//                             // tirando e colocando valores no gráfico
+//                             dados.labels.shift(); // apagar o primeiro
+//                             dados.labels.push(registro.times);// incluir um novo momento
 
-                            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                            dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
+//                             dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+//                             dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
 
-                            dados.datasets[1].data.shift();
-                            dados.datasets[1].data.push(registro.voto);
-                        }
+//                             dados.datasets[1].data.shift();
+//                             dados.datasets[1].data.push(registro.voto);
+//                         }
 
                         
                        
-                        window.myChart.update();
+//                         window.myChart.update();
             
 
-                        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 2000);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 200000);
-                }
-            })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                });
+//                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+//                         proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 2000);
+//                     });
+//                 } else {
+//                     console.error('Nenhum dado encontrado ou erro na API');
+//                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+//                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 200000);
+//                 }
+//             })
+//                 .catch(function (error) {
+//                     console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//                 });
 
-        }
+//         }
 
-    }
-</script>
+//     }
+// <!-- </script> 
 
-<!-- <script>
+<script>
        
 
 
@@ -459,7 +462,7 @@ function buscarMedidasEmTempoReal(idAquario) {
 function plotarGrafico(resposta, idAquario) {
     console.log('iniciando plotagem do gráfico...');
 
-    var dados2 = {
+    var dados = {
         labels: [],
         datasets: [
             {
@@ -480,19 +483,19 @@ function plotarGrafico(resposta, idAquario) {
 
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
-        dados2.labels.push(registro.mapa);
-        dados2.datasets[0].data.push(registro.mapa);
-        dados2.datasets[1].data.push(registro.voto);
+        dados.labels.push(registro.mapa);
+        dados.datasets[0].data.push(registro.mapa);
+        dados.datasets[1].data.push(registro.voto);
         console.log(registro.voto)
 
 
     }
 
-    console.log(JSON.stringify(dados2));
+    console.log(JSON.stringify(dados));
 
     var ctx2 = myChart2.getContext('2d');
     window.myChart2 = Chart.Bar(ctx2, {
-        data: dados2,
+        data: dados,
         options: {
             responsive: true,
             animation: { duration: 900 },
@@ -527,37 +530,37 @@ function plotarGrafico(resposta, idAquario) {
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados2) {
+    function atualizarGrafico(idAquario, dados) {
 
         fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
                     console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(dados2);
+                    console.log(dados);
 
                     for (i = 0; i < novoRegistro.length; i++) {
                         var registro = novoRegistro[i];
                         // tirando e colocando valores no gráfico
-                        dados2.labels.shift(); // apagar o primeiro
-                        dados2.labels.push(registro.mapa);// incluir um novo momento
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(registro.mapa);// incluir um novo momento
 
-                        dados2.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados2.datasets[0].data.push(registro.mapa); // incluir uma nova medida de umidade
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(registro.mapa); // incluir uma nova medida de umidade
 
-                        dados2.datasets[1].data.shift();
-                        dados2.datasets[1].data.push(registro.voto);
+                        dados.datasets[1].data.shift();
+                        dados.datasets[1].data.push(registro.voto);
                     }
 
                     window.myChart2.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados2), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados2), 200000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
             }
         })
             .catch(function (error) {
@@ -567,5 +570,5 @@ function plotarGrafico(resposta, idAquario) {
     }
 
 }
-</script> -->
+</script> 
 

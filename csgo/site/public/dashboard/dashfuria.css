@@ -99,7 +99,13 @@ body {
     width: fit-content;
     box-shadow: 10px 8px 8px #030A8C;
     border-radius: 12px;
+}
 
+.cards {
+  transition: all 5s;
+  display: flex;
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 .botao{

@@ -181,9 +181,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('art').innerHTML += ''
                     console.log(json)
-                    document.getElementById('art').innerHTML = JSON.stringify(json[10]);
+                    var art = json[10]
+                    document.getElementById('art').innerHTML += `<p class='cards'> Rating2: ${art.rating2}</p>`
+                    document.getElementById('art').innerHTML += `<p class='cards'> kills per Round: ${art.KillsPerRound}</p>`
+                    document.getElementById('art').innerHTML += `<p class='cards'> Headshots: ${art.Headshots}</p>`
+                    document.getElementById('art').innerHTML += `<p class='cards'> DeathsPerRound: ${art.DeathsPerRound}</p>`
 
 
                 })
@@ -197,10 +201,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('yuurih').innerHTML += ''
                     console.log(json)
-
-                    document.getElementById('yuurih').innerHTML = JSON.stringify(json[11]);
+                    var yuurih = json[11]
+                    document.getElementById('yuurih').innerHTML += `<p class='cards'> Rating2: ${yuurih.rating2}</p>`
+                    document.getElementById('yuurih').innerHTML += `<p class='cards'> kills per Round: ${yuurih.KillsPerRound}</p>`
+                    document.getElementById('yuurih').innerHTML += `<p class='cards'> Headshots: ${yuurih.Headshots}</p>`
+                    document.getElementById('yuurih').innerHTML += `<p class='cards'> DeathsPerRound: ${yuurih.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -213,10 +220,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('kscerato').innerHTML += ''
                     console.log(json)
-
-                    document.getElementById('kscerato').innerHTML = JSON.stringify(json[12]);
+                    var kscerato = json[12]
+                    document.getElementById('kscerato').innerHTML += `<p class='cards'> Rating2: ${kscerato.rating2}</p>`
+                    document.getElementById('kscerato').innerHTML += `<p class='cards'> kills per Round: ${kscerato.KillsPerRound}</p>`
+                    document.getElementById('kscerato').innerHTML += `<p class='cards'> Headshots: ${kscerato.Headshots}</p>`
+                    document.getElementById('kscerato').innerHTML += `<p class='cards'> DeathsPerRound: ${kscerato.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -230,9 +240,13 @@
             if (response.ok) {
                 response.json().then(function (json) {
 
+                    document.getElementById('saffe').innerHTML += ''
                     console.log(json)
-
-                    document.getElementById('saffe').innerHTML = JSON.stringify(json[13]);
+                    var saffe = json[13]
+                    document.getElementById('saffe').innerHTML += `<p class='cards'> Rating2: ${saffe.rating2}</p>`
+                    document.getElementById('saffe').innerHTML += `<p class='cards'> kills per Round: ${saffe.KillsPerRound}</p>`
+                    document.getElementById('saffe').innerHTML += `<p class='cards'> Headshots: ${saffe.Headshots}</p>`
+                    document.getElementById('saffe').innerHTML += `<p class='cards'> DeathsPerRound: ${saffe.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -246,9 +260,13 @@
             if (response.ok) {
                 response.json().then(function (json) {
 
+                    document.getElementById('drop').innerHTML += ''
                     console.log(json)
-
-                    document.getElementById('drop').innerHTML = JSON.stringify(json[14]);
+                    var drop = json[14]
+                    document.getElementById('drop').innerHTML += `<p class='cards'> Rating2: ${drop.rating2}</p>`
+                    document.getElementById('drop').innerHTML += `<p class='cards'> kills per Round: ${drop.KillsPerRound}</p>`
+                    document.getElementById('drop').innerHTML += `<p class='cards'> Headshots: ${drop.Headshots}</p>`
+                    document.getElementById('drop').innerHTML += `<p class='cards'> DeathsPerRound: ${drop.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -260,7 +278,7 @@
 </script>
 <script>
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+b_usuario.innerHTML =  sessionStorage.NICKNAME
 
 
 

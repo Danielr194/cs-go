@@ -26,6 +26,10 @@ DeathsPerRound float,
 fktimej INT,
 constraint fktimej foreign key(fktimej) references time(idTime));
 
+CREATE TABLE nivel(
+idnivel INT PRIMARY KEY auto_increment,
+nivel INT);
+
 CREATE TABLE usuario(
 idUsuario INT primary key auto_increment,
 nome VARCHAR(50),
@@ -33,9 +37,10 @@ nickname VARCHAR(45),
 email VARCHAR(45) unique,
 senha VARCHAR(45),
 confirmarSenha VARCHAR(45),
-nivelGc INT,
+fknivel INT,
 fktime INT,
-constraint fkQime foreign key(fktime) references time(idTime));
+constraint fkQime foreign key(fktime) references time(idTime),
+constraint fknivel foreign key(fknivel)references nivel(idnivel));
 
 INSERT INTO time VALUES
 (null, 'Imperal', 29, 'Felippe Martins', '2018-03-09'),
@@ -63,8 +68,36 @@ INSERT INTO jogador VALUES
 (null, 'arT', 0.98, 0.61, 44.0, 0.71,3 ),
 (null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
 (null, 'Kscerato', 1.20, 0.67, 43.0, 0.64, 3),
-(null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3),
-(null, 'yuurih', 1.08, 0.67, 43.0, 0.64, 3);
+(null, 'Saffee', 1.04, 0.65, 27.7, 0.59, 3),
+(null, 'Drop',0.91, 0.54, 51.1, 0.64, 3);
+
+
+
+
+INSERT INTO nivel VALUES
+(null, 1),
+(null, 2),
+(null, 3),
+(null, 4),
+(null, 5),
+(null, 6),
+(null, 7),
+(null, 8),
+(null, 9),
+(null, 10),
+(null, 11),
+(null, 12),
+(null, 13),
+(null, 14),
+(null, 15),
+(null, 16),
+(null, 17),
+(null, 18),
+(null, 19),
+(null, 20),
+(null, 21);
+
+SELECT * FROM usuario;
 
 
 INSERT INTO mapa VALUES
@@ -72,9 +105,9 @@ INSERT INTO mapa VALUES
 (null, 'Inferno'),
 (null, 'Dust2'),
 (null, 'Nuke');
+TRUNCATE TABLE jogador;
 
-
-SELECT * FROM jogador;
+SELECT * FROM usuario;
 
 SELECT COUNT(questionario.fkmapa) as voto, Nomemapa  
         FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;

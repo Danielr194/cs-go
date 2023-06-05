@@ -15,7 +15,7 @@ router.get("/estatis", function (req, res) {
     medidaController.estatisticaJogador(req, res);
 })
 
-router.get("/graficos2", function (req, res) {
+router.get("/graficosDois", function (req, res) {
     medidaController.graficosDois(req, res);
 })
 

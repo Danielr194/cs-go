@@ -38,10 +38,10 @@
             <input type="text" name="" id="input_email" placeholder="Email:"><br><br>
 
 
-            <input type="text" name="" id="input_senha" placeholder="Senha:"><br><br>
+            <input type="password" name="" id="input_senha" placeholder="Senha:"><br><br>
 
 
-            <input type="text" id="input_confirmar" placeholder="Confirmar senha:">
+            <input type="password" id="input_confirmar" placeholder="Confirmar senha:">
             
             <p>Seu time de CS:GO:</p>
             <select id="gender">
@@ -108,14 +108,15 @@
 
             finalizarAguardar();
             return false;
-        }
-        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
-            swal("Ops", "O e-mail cadastrado é inválido. Por favor, insira um e-mail válido 😠", "warning")
-        }
-        else if (senhaVar.length < 8) {
-            swal("Ops", "A senha inserida é muito curta. Por favor,insira uma senha com pelo menos 8 caracteres 😠", "warning")
         }else if( confirmarVar != senhaVar){
                 swal("ops", "As senhas estão diferente", "error")
+                return false;
+        } else if (senhaVar.length < 8) {
+            swal("Ops", "A senha inserida é muito curta. Por favor,insira uma senha com pelo menos 8 caracteres 😠", "warning")
+            return false;
+        }else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 7) {
+            swal("Ops", "O e-mail cadastrado é inválido. Por favor, insira um e-mail válido 😠", "warning")
+            return false;
         } else {
             setInterval('oi', 5000)
         }

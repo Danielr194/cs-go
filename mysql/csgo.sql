@@ -112,7 +112,8 @@ SELECT * FROM usuario;
 SELECT COUNT(questionario.fkmapa) as voto, Nomemapa  
         FRom  questionario JOIN mapa ON  mapa.idmapa = questionario.fkmapa group by questionario.fkmapa;
 
-	
+	SELECT COUNT(usuario.fknivel) as voto, nivel.nivel  
+    FRom  usuario JOIN nivel ON  nivel.idnivel = usuario.fknivel group by usuario.fknivel;
 
 select rating2, KillsPerRound, Headshots, DeathsPerRound from jogador;
 

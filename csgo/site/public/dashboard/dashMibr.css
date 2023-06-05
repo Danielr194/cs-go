@@ -145,47 +145,43 @@ body{
 
 .corpo{
   display: flex;
-  justify-content: start;
+  justify-content: center;
   margin-left: 20px;
+  width: 60wh;
   gap: 2rem;
 }
 
-.caixa_mapas{
+.grafico{
   display: flex;
-  background-color: #0BD765;
-  border-radius: 12px;
-  flex-direction: column;
-  width: fit-content;
-  text-align: center;
-  margin-left: 15px;
-  box-shadow: 10px 8px 8px black;
-
-}
-.mapas_com_mais_v{
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-  align-items: center;
+  width: 60vw;
+ 
 }
 
 
-
-.caixa_camp{
-  display: flex;
-  margin-top: 25px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: large;
-
+.decoracao_camp a{
+  color: white;
+  text-decoration: none;
 }
-.caixa_camp h2{
+
+.decoracao_camp a:hover{
+  transition: all 0.5s;
+  color:#F2C230;
+}
+
+
+.historia {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+}
+.historia a{
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+}
+.historia a:hover{
+
+  transition: all 0.5s;
+  color: #F2C230;
 }
 
 .campeonato{
@@ -194,6 +190,12 @@ body{
   justify-content: center;
   gap: 3rem;
   align-items: center;
+  padding: 0;
+  margin:0;
+}
+
+.campeonato p{
+  margin-top: 0;
 }
 
 .campeonato img{
@@ -207,8 +209,13 @@ body{
   flex-direction: column;
   margin-top: 25px;
   font-size: large;
+  color: white;
+}
 
- 
+.bemvindo{
+  display: flex;
+  color: white;
+  gap: 1rem;
 }
 
 .jogos h2{

@@ -26,11 +26,11 @@
         <div class="nav">
             <div class="bemvindo">
                 <span>Bem-vindo</span>
-                <span id="b_usuario"></span>
+                <span id="b_usuario">  </span>
             </div>
             <div class="caminho_time">
             <div class="img_mibr">
-                <li ><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="80px"></li>
+                <li ><img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="80px"  style="margin-right:50px;"></li>
             </div>
         </div>
         <div class="caminho_time">
@@ -51,40 +51,40 @@
                 <div class="jogadores">
                     <img src="../assets/dash/hen1.jpg" alt="" width="235px">
                     <h3>Hen1</h3>
-                    <button class="botao" onclick="estatisticaH()">ver performace</button>
-                    <p class="performace" id="hen1"></p>
+                    <button class="botao" onclick="estatisticaH()">ver performance</button>
+                    <p class="performance" id="hen1"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/exit.jpg" alt="" width="235px" >
                     <h3> Exit   </h3>
-                    <button class="botao" onclick="estatisticaE()">ver performace</button>
-                    <p class="performace" id="exit"></p>
+                    <button class="botao" onclick="estatisticaE()">ver performance</button>
+                    <p class="performance" id="exit"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/turttle.jpg" alt="" width="235px">
                     <h3>Turttle</h3>
-                    <button class="botao" onclick="estatisticaT()">ver performace</button>
-                    <p class="performace" id="turttle"></p>
+                    <button class="botao" onclick="estatisticaT()">ver performance</button>
+                    <p class="performance" id="turttle"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/brnz4.jpg" alt="" width="235px">
                     <h3>brnz4n</h3>
-                    <button class="botao" onclick="estatisticaB()">ver performace</button>
-                    <p class="performace" id="brnz4"></p>
+                    <button class="botao" onclick="estatisticaB()">ver performance</button>
+                    <p class="performance" id="brnz4"></p>
                 </div>
             </div>
             <div class="caixa">
                 <div class="jogadores">
                     <img src="../assets/dash/insani.jpg" alt="" width="235px">
                     <h3>Insani</h3>
-                    <button class="botao" onclick="estatisticaI()">ver performace</button>
-                    <p class="performace" id="insani"></p>
+                    <button class="botao" onclick="estatisticaI()">ver performance</button>
+                    <p class="performance" id="insani"></p>
                 </div>
             </div>
         </div>
@@ -96,38 +96,20 @@
                 <img src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="90px"   >
             </div>
         </div>
-        <div>
+        <div class="historia">
             <ul>
                 <a href="../HistoriaTimes/Mibr.html"><h2>VEJA A HISTORIA DO SEU TIME!!!</h2></a>
             </ul>
         </div>
         <div class="corpo">
-            <div>
+            <div class="grafico">
                 <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
             </div>
-            <div class="caixa_mapas">
-                <h2>Vitorias por mapa mais jogados:</h2>
-                <div class="mapas_com_mais_v"> 
-                    <div>
-                        <h3>Nuke</h3>
-                        <h3>66.7%</h3>
-                    </div>
-                    <div>
-                    <h3>Anciente</h3>
-                    <h3>60%</h3>
-                </div>
-                <div>
-                    <h3>Ouverpass</h3>
-                    <h3>55.6%</h3>
-                </div>
-                <div>
-                    <h3>Mirage</h3>
-                    <h3>50%</h3>
-                </div>
-            </div>
+           
         </div>
     </div>
     <div class="jogos">
+        <div class="decoracao_camp">
         <ul>
             <li>
                 <a href="./camp_fumi.html">
@@ -135,11 +117,12 @@
                 </a>
             </li>
         </ul>
+    </div>
         <ul class="campeonato">
-            <li><img src="../assets/dash/blast.png" alt="" width="50px">
+            <li><img src="../assets/dash/blast.png" alt="" width="50px"  style="margin-left:70px;">
                 <p>ESL Pro League Season 18</p>
             </li>
-            <li><img src="../assets/dash/gamers8.webp" alt="" width="63px">
+            <li><img src="../assets/dash/gamers8.webp" alt="" width="55px">
                 <p>Gamers8 2023</p>
             </li>
         </ul>
@@ -189,10 +172,10 @@
                     document.getElementById('hen1').innerHTML = ''
                     console.log(json)
                     var hen1 = json[5]
-                    document.getElementById('hen1').innerHTML += `<p class='cards'> Rating2: ${hen1.rating2}</p>`
-                    document.getElementById('hen1').innerHTML += `<p class='cards'> kills per Round: ${hen1.KillsPerRound}</p>`
-                    document.getElementById('hen1').innerHTML += `<p class='cards'> Headshots: ${hen1.Headshots}</p>`
-                    document.getElementById('hen1').innerHTML += `<p class='cards'> DeathsPerRound: ${hen1.DeathsPerRound}</p>`
+                    document.getElementById('hen1').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${hen1.rating2}</p>`
+                    document.getElementById('hen1').innerHTML += `<p class='cards'><spam class='verde'> kills per Round: ${hen1.KillsPerRound}</p>`
+                    document.getElementById('hen1').innerHTML += `<p class='cards'><spam class='vermelho'> Headshots: ${hen1.Headshots}%</p>`
+                    document.getElementById('hen1').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${hen1.DeathsPerRound}</p>`
 
 
                 })
@@ -209,10 +192,10 @@
                     document.getElementById('exit').innerHTML = ''
                     console.log(json)
                     var exit = json[6]
-                    document.getElementById('exit').innerHTML += `<p class='cards'> Rating2: ${exit.rating2}</p>`
-                    document.getElementById('exit').innerHTML += `<p class='cards'> kills per Round: ${exit.KillsPerRound}</p>`
-                    document.getElementById('exit').innerHTML += `<p class='cards'> Headshots: ${exit.Headshots}</p>`
-                    document.getElementById('exit').innerHTML += `<p class='cards'> DeathsPerRound: ${exit.DeathsPerRound}</p>`
+                    document.getElementById('exit').innerHTML += `<p class='cards'><spam class='verde'>  Rating2: ${exit.rating2}</p>`
+                    document.getElementById('exit').innerHTML += `<p class='cards'><spam class='verde'>  kills per Round: ${exit.KillsPerRound}</p>`
+                    document.getElementById('exit').innerHTML += `<p class='cards'><spam class='verde'>  Headshots: ${exit.Headshots}%</p>`
+                    document.getElementById('exit').innerHTML += `<p class='cards'><spam class='verde'>  DeathsPerRound: ${exit.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -230,10 +213,10 @@
                     document.getElementById('turttle').innerHTML = ''
                     console.log(json)
                     var turttle = json[7]
-                    document.getElementById('turttle').innerHTML += `<p class='cards'> Rating2: ${turttle.rating2}</p>`
-                    document.getElementById('turttle').innerHTML += `<p class='cards'> kills per Round: ${turttle.KillsPerRound}</p>`
-                    document.getElementById('turttle').innerHTML += `<p class='cards'> Headshots: ${turttle.Headshots}</p>`
-                    document.getElementById('turttle').innerHTML += `<p class='cards'> DeathsPerRound: ${turttle.DeathsPerRound}</p>`
+                    document.getElementById('turttle').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${turttle.rating2}</p>`
+                    document.getElementById('turttle').innerHTML += `<p class='cards'><spam class='verde'> kills per Round: ${turttle.KillsPerRound}</p>`
+                    document.getElementById('turttle').innerHTML += `<p class='cards'><spam class='verde'> Headshots: ${turttle.Headshots}%</p>`
+                    document.getElementById('turttle').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${turttle.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -250,10 +233,10 @@
                     document.getElementById('brnz4').innerHTML = ''
                     console.log(json)
                     var brnz4 = json[8]
-                    document.getElementById('brnz4').innerHTML += `<p class='cards'> Rating2: ${brnz4.rating2}</p>`
-                    document.getElementById('brnz4').innerHTML += `<p class='cards'> kills per Round: ${brnz4.KillsPerRound}</p>`
-                    document.getElementById('brnz4').innerHTML += `<p class='cards'> Headshots: ${brnz4.Headshots}</p>`
-                    document.getElementById('brnz4').innerHTML += `<p class='cards'> DeathsPerRound: ${brnz4.DeathsPerRound}</p>`
+                    document.getElementById('brnz4').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${brnz4.rating2}</p>`
+                    document.getElementById('brnz4').innerHTML += `<p class='cards'><spam class='verde'> kills per Round: ${brnz4.KillsPerRound}</p>`
+                    document.getElementById('brnz4').innerHTML += `<p class='cards'><spam class='verde'> Headshots: ${brnz4.Headshots}%</p>`
+                    document.getElementById('brnz4').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${brnz4.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -271,10 +254,10 @@
                     document.getElementById('insani').innerHTML = ''
                     console.log(json)
                     var insani = json[6]
-                    document.getElementById('insani').innerHTML += `<p class='cards'> Rating2: ${insani.rating2}</p>`
-                    document.getElementById('insani').innerHTML += `<p class='cards'> kills per Round: ${insani.KillsPerRound}</p>`
-                    document.getElementById('insani').innerHTML += `<p class='cards'> Headshots: ${insani.Headshots}</p>`
-                    document.getElementById('insani').innerHTML += `<p class='cards'> DeathsPerRound: ${insani.DeathsPerRound}</p>`
+                    document.getElementById('insani').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${insani.rating2}</p>`
+                    document.getElementById('insani').innerHTML += `<p class='cards'><spam class='verde'> kills per Round: ${insani.KillsPerRound}</p>`
+                    document.getElementById('insani').innerHTML += `<p class='cards'><spam class='verde'> Headshots: ${insani.Headshots}</p>`
+                    document.getElementById('insani').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${insani.DeathsPerRound}</p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -286,31 +269,22 @@
 <script>
 
 
-b_usuario.innerHTML =  sessionStorage.NICKNAME
-    
+    b_usuario.innerHTML = sessionStorage.NICKNAME
 
 
-    let proximaAtualizacao;
-
-    window.onload = obterDadosGrafico(1);
+    window.onload = graficoDois(1);
 
 
-    function obterDadosGrafico(idAquario) {
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+    function graficoDois() {
+        fetch(`/medidas/graficosDois`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico(resposta, idAquario);
-
+                    plotarGrafico(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
+                
             }
         })
             .catch(function (error) {
@@ -318,10 +292,12 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
             });
     }
 
+
+
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
+    function plotarGrafico(resposta) {
         console.log('iniciando plotagem do gráfico...');
 
         var dados = {
@@ -333,23 +309,22 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
                     data: []
                 },
                 {
-                    yAxisID: 'y-totalpersonagens',
-                    label: 'times Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
+                    yAxisID: 'y-totalnivel',
+                    label: 'nivel',
+                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000', '#FF1493', '#4B0082'],
                     fill: true,
                     data: []
                 }
             ]
         };
-      
+
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            dados.labels.push(registro.times);
-            dados.datasets[0].data.push(registro.times);
+            dados.labels.push(registro.nivel);
+            dados.datasets[0].data.push(registro.nivel);
             dados.datasets[1].data.push(registro.voto);
-            console.log(registro.voto)
-
+            console.log(registro.nivel)
 
         }
 
@@ -365,7 +340,7 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Quantidade de fans por time:'
+                    text: 'Os nivels mais Escolhidos'
                 },
 
                 scales: {
@@ -373,10 +348,10 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
                         type: 'linear',
                         display: true,
                         position: 'left',
-                        id: 'y-totalpersonagens',
+                        id: 'y-totalnivel',
                         ticks: {
                             beginAtZero: true,
-                            max: 50,
+                            max: 21,
                             min: 0
                         }
                     }, {
@@ -392,9 +367,9 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
 
         //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
         //     Para ajustar o "select", ajuste o comando sql em src/models
-        function atualizarGrafico(idAquario, dados) {
+        function atualizarGrafico(dados) {
 
-            fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            fetch(`/medidas/graficosDois`, { cache: 'no-store' }).then(function (response) {
                 if (response.ok) {
                     response.json().then(function (novoRegistro) {
 
@@ -405,24 +380,24 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
                             var registro = novoRegistro[i];
                             // tirando e colocando valores no gráfico
                             dados.labels.shift(); // apagar o primeiro
-                            dados.labels.push(registro.times);// incluir um novo momento
+                            dados.labels.push(registro.nivel);// incluir um novo momento
 
                             dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                            dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
+                            dados.datasets[0].data.push(registro.nivel); // incluir uma nova medida de umidade
 
                             dados.datasets[1].data.shift();
-                            dados.datasets[1].data.push(registro.voto);
+                            dados.datasets[1].data.push(registro.nivel);
                         }
 
                         window.myChart.update();
 
                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
+
                 }
             })
                 .catch(function (error) {
@@ -432,5 +407,4 @@ b_usuario.innerHTML =  sessionStorage.NICKNAME
         }
 
     }
-
 </script>

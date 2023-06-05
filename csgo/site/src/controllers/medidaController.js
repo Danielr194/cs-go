@@ -62,11 +62,9 @@ function estatisticaJogador(req,res){
 
 
 function graficosDois(req,res){
-    
-
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.estatisticaJogador().then(function (resultado) {
+    medidaModel.graficosDois().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

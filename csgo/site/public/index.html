@@ -22,6 +22,9 @@
 
     <div class="header">
         <div class="nav">
+            <div class="frase" >
+                <span id="frase"></span>
+            </div>
             <ul class="links">
                 <li>
                     <a href="#">Home</a>
@@ -88,7 +91,7 @@
             <p>
                     O cs:go é um jogo onde você tem a possibilidade de personalizar suas armas e facas que não afetam a jogabilidade, apenas mudam a aparência das armas deixando-las mais bonitas. Mesmo não tendo um benefício, as skins são muito <br> atrativas para os jogadores e são tidas como status no jogo, e por isso o mercado de skins CS:GO movimenta milhões de reais e existem muitos colecionadores que procuram skins raras como Hardened AK-47 que esta avaliada em 500mil reais. 
                 </p>
-                <img src="./assets/dash/ak.png" alt="" width="400px">
+                <img src="./assets/dash/gif_ak47" alt="" width="400px">
                 </div> 
                 
          
@@ -213,13 +216,15 @@
                     <p class="vermelho"><b>1</b></p>
                 </div>
             </div>
+    
         </div>
     </div>
     </div>
-    </div>
 
     </div>
-
+   
+    </div>
+    
     <footer>
         <div class="by">
             <p>By</p>
@@ -243,6 +248,27 @@
 </html>
 
 <script>
+    var list_frase =[
+        `Bem vindo CT`,
+        `Bem vindo TR`,
+        `Bem vindo jogador`,
+        `Queota?`,
+        `Fallen stop blowing my mind`
+    ];
+
+   function mostrar_frase(){
+    var aleatorio = parseInt(Math.random()*5)
+
+        document.getElementById("frase").innerHTML += `${list_frase[aleatorio]}`
+        console.log(list_frase[aleatorio])
+   }
+
+   window.onload = mostrar_frase()
+
+    
+    
+
+
     function cadastrarMapa() {
         var mapaVar = select.value;
 
@@ -352,7 +378,7 @@ function plotarGrafico(resposta, idAquario) {
                     id: 'y-totalmapa',
                     ticks: {
                         beginAtZero: true,
-                        max: 75,
+                        max: 60,
                         min: 0
                     }
                 }, {

@@ -14,28 +14,31 @@
     <script src="../js/funcoes.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
 </head>
 
-<body>
+<body onload="graficoDois()">
     <div class="header">
         <div class="nav">
             <div class="bemvindo">
-                <span>Bem-vindo         </span>
-                <span id="b_usuario">  </span>
+                <span>Bem-vindo </span>
+                <span class="bemvindo" id="b_usuario"> </span>
+
             </div>
             <div class="caminho_time">
                 <div class="img_impe">
-                <li ><img src="../assets/dash/Imperial-esports-logo.png" alt="" width="35px"></li>
+                    <li><img src="../assets/dash/Imperial-esports-logo.png" alt="" width="35px"></li>
+                </div>
+            </div>
+            <div class="caminho_time">
+                <li><a href="./dashMibr.html"><img class="crescer" src="../assets/dash/Made_In_Brazil_logo.png" alt=""
+                            width="60px"></a>
+                </li>
+                <li><a href="./dashFuria.html"><img class="crescer" src="../assets/dash/furiaLogo.png" alt=""
+                            width="35px"></a></li>
+
             </div>
         </div>
-        <div class="caminho_time">
-            <li><a  href="./dashMibr.html"><img class="crescer"  src="../assets/dash/Made_In_Brazil_logo.png" alt="" width="60px"></a>
-            </li>
-            <li><a href="./dashFuria.html"><img class="crescer" src="../assets/dash/furiaLogo.png" alt="" width="35px"></a></li>
-
-        </div>
-    </div>
     </div>
     <div class="main">
         <div>
@@ -47,7 +50,7 @@
                 <div class="jogadores">
                     <img src="../assets/dash/fallen.webp" alt="" width="235px">
                     <h3>Fallen</h3>
-                    <button class="botao" onclick="estatisticaf()">ver performace</button>
+                    <button class="botao" onclick="estatisticaf()">ver performance</button>
                     <p class="performace" id="fallen"></p>
                 </div>
             </div>
@@ -55,7 +58,7 @@
                 <div class="jogadores">
                     <img src="../assets/dash/boltz.webp" alt="" width="235px">
                     <h3>Boltz</h3>
-                    <button class="botao" onclick="estatisticab()">ver performace</button>
+                    <button class="botao" onclick="estatisticab()">ver performance</button>
                     <p class="performace" id="boltz"></p>
                 </div>
             </div>
@@ -63,7 +66,7 @@
                 <div class="jogadores">
                     <img src="../assets/dash/chelo.webp" alt="" width="235px">
                     <h3>chelo</h3>
-                    <button class="botao" onclick="estatisticac()">ver performace</button>
+                    <button class="botao" onclick="estatisticac()">ver performance</button>
                     <p class="performace" id="chelo"></p>
                 </div>
             </div>
@@ -71,7 +74,7 @@
                 <div class="jogadores">
                     <img src="../assets/dash/vini.webp" alt="" width="235px">
                     <h3>vini</h3>
-                    <button class="botao" onclick="estatisticav()">ver performace</button>
+                    <button class="botao" onclick="estatisticav()">ver performance</button>
                     <p class="performace" id="vini"></p>
                 </div>
             </div>
@@ -79,7 +82,7 @@
                 <div class="jogadores">
                     <img src="../assets/dash/jota.webp" alt="" width="235px">
                     <h3>jota</h3>
-                    <button class="botao" onclick="estatisticaj()">ver performace</button>
+                    <button class="botao" onclick="estatisticaj()">ver performance</button>
                     <p class="performace" id="jota"></p>
                 </div>
             </div>
@@ -91,39 +94,39 @@
                 <h3>#29</h3>
                 <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="50px" height="50px">
             </div>
-            <div>
+            <div class="historia">
                 <ul>
-                    <a href="../HistoriaTimes/Imperial.html"><h2>VEJA A HISTORIA DO SEU TIME!!!</h2></a>
+                    <a href="../HistoriaTimes/Imperial.html">
+                        <h2>VEJA A HISTORIA DO SEU TIME!!!</h2>
+                    </a>
                 </ul>
             </div>
         </div>
         <div class="corpo">
-            <div>
-                <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
+            <div class="posicao_grafico">
+                <div class="grafico">
+                    <canvas id="myChart" style=" height:50vh; width:50vw;"></canvas>
+                </div>
             </div>
 
-            <!-- <div>
-                <canvas id="myChart2" style=" height:50vh; width:50vw;"></canvas>
-            </div> -->
+
             <div class="jogos">
                 <div class="decoracao_camp">
-                <ul >
-                    <li>
+                    <ul>
                         <a href="./camp_impe.html">
                             <h2> Proximos campeonatos:</h2>
                         </a>
-                    </li>
-                </ul>
-                <ul class="campeonato">
-                    <li><img src="../assets/dash/blast.png" alt="" width="50px">
-                        <p>BLAST Premier Spring Final</p>
-                    </li>
-                    <li><img src="../assets/dash/fire.png" alt="" width="63px">
-                        <p>Fire league</p>
-                    </li>
-                </ul>
+                    </ul>
+                    <ul class="campeonato">
+                        <li><img src="../assets/dash/blast.png" alt="" width="50px" style="margin-left:70px;">
+                            <p>BLAST Premier Spring Final</p>
+                        </li>
+                        <li><img src="../assets/dash/fire.png" alt="" width="63px">
+                            <p class="centralizando_p">Fire league</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
 
             <div class="jogos">
@@ -132,23 +135,23 @@
                     <div class="imp">
                         <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
                         <p><b>Imperial</b></p>
-                        <p class="verde"><b>1</b></p>
+                        <p class="vermelho"><b>1</b></p>
                     </div>
                     <div class="Sprout">
                         <img src="../assets/dash/sprout.ico" alt="" width="78px">
                         <p><b>Paqueta</b></p>
-                        <p class="vermelho"><b>2</b></p>
+                        <p class="verde"><b>2</b></p>
                     </div>
                     <hr>
                     <div class="imp">
                         <img src="../assets/dash/Imperial-esports-logo.png" alt="" width="70px">
                         <p><b>Imperial</b></p>
-                        <p class="verde"><b>1</b></p>
+                        <p class="vermelho"><b>1</b></p>
                     </div>
                     <div class="ine">
                         <img src="../assets/dash/9iner.png" alt="" width="80px">
                         <p><b>Forward</b></p>
-                        <p class="vermelho"><b>2</b></p>
+                        <p class="verde"><b>2</b></p>
                     </div>
                 </div>
             </div>
@@ -171,32 +174,36 @@
                 response.json().then(function (json) {
                     var fallen = json[0];
                     console.log(json)
-                    document.getElementById('fallen').innerHTML     = ""
-                    document.getElementById('fallen').innerHTML += `<p class='cards'>Rating2: ${fallen.rating2}</p>`;
-                    document.getElementById('fallen').innerHTML += `<p class='cards'>KillsPerRound: ${fallen.KillsPerRound}</p>`;
-                    document.getElementById('fallen').innerHTML += `<p class='cards'>Headshots: ${fallen.Headshots}%</p>`;
-                    document.getElementById('fallen').innerHTML += `<p class='cards'>DeathsPerRound: ${fallen.DeathsPerRound}</p>`;
- 
-             })
+                    document.getElementById('fallen').innerHTML = ''
+                    document.getElementById('fallen').innerHTML = ""
+                    document.getElementById('fallen').innerHTML += `<p class='cards'><spam class='verde'>Rating2: ${fallen.rating2}</spam></p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'><spam class='verde'>KillsPerRound: ${fallen.KillsPerRound}</spam></p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'><spam class='vermelho'>Headshots: ${fallen.Headshots}%</spam></p>`;
+                    document.getElementById('fallen').innerHTML += `<p class='cards'><spam class='verde'>DeathsPerRound: ${fallen.DeathsPerRound}</spam></p>`;
+
+                })
+
+
             }
         })
     }
+
 
     function estatisticab() {
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('boltz').innerHTML = ''
                     console.log(json)
                     var boltz = json[1]
                     document.getElementById('boltz').innerHTML = ``;
-                    document.getElementById('boltz').innerHTML += `<p class='cards' >Rating2: ${boltz.rating2}</p>`;
-                    document.getElementById('boltz').innerHTML += `<p class='cards' >KillsPerRound:  ${boltz.KillsPerRound}</p>`;
-                    document.getElementById('boltz').innerHTML += `<p class='cards' >Headshots: ${boltz.Headshots}%</p>`;
-                    document.getElementById('boltz').innerHTML += `<p class='cards' >DeathsPerRound: ${boltz.DeathsPerRound}</p>`;
-                    
+                    document.getElementById('boltz').innerHTML += `<p class='cards'><spam class='verde'>Rating2: ${boltz.rating2}</spam></p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards' ><spam class='verde'>KillsPerRound:  ${boltz.KillsPerRound}</spam></p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards'> <spam class='vermelho'>Headshots: ${boltz.Headshots}% </spam></p>`;
+                    document.getElementById('boltz').innerHTML += `<p class='cards'><spam class='verde'>DeathsPerRound: ${boltz.DeathsPerRound}</spam></p>`;
 
-               
+
+
 
                 })
                 // estatisticaJogador = response.json()
@@ -209,14 +216,14 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('chelo').innerHTML = ''
                     console.log(json)
                     var chelo = json[2]
-                    document.getElementById('chelo').innerHTML += `<p class='cards'> Rating2: ${chelo.rating2}</p>`
-                    document.getElementById('chelo').innerHTML += `<p class='cards'> KillsPerRound: ${chelo.KillsPerRound}</p>`
-                    document.getElementById('chelo').innerHTML += `<p class='cards'> Headshots: ${chelo.Headshots}%</p>`
-                    document.getElementById('chelo').innerHTML += `<p class='cards'> DeathsPerRound: ${chelo.DeathsPerRound}</p>`
-    
+                    document.getElementById('chelo').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${chelo.rating2}</spam></p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'><spam class='verde'> KillsPerRound: ${chelo.KillsPerRound}</spam></p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'><spam class='verde'> Headshots: ${chelo.Headshots}%</spam></spam></p>`
+                    document.getElementById('chelo').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${chelo.DeathsPerRound}</spam></p>`
+
 
                 })
                 // estatisticaJogador = response.json()
@@ -229,13 +236,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-
+                    document.getElementById('vini').innerHTML = ''
                     console.log(json)
                     var vini = json[3]
-                    document.getElementById('vini').innerHTML += `<p class='cards'> Rating: ${vini.rating2}</p>`
-                    document.getElementById('vini').innerHTML += `<p class='cards'> KillsPerRound: ${vini.KillsPerRound}</p>`
-                    document.getElementById('vini').innerHTML += `<p class='cards'> Headshots: ${vini.Headshots}%</p>`
-                    document.getElementById('vini').innerHTML += `<p class='cards'> DeathsPerRound: ${vini.DeathsPerRound}</p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'><spam class='verde'> Rating: ${vini.rating2}</spam></p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'><spam class='vermelho'> KillsPerRound: ${vini.KillsPerRound}</spam></p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'><spam class='verde'> Headshots: ${vini.Headshots}%</spam></p>`
+                    document.getElementById('vini').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${vini.DeathsPerRound}</spam></p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -248,13 +255,13 @@
         fetch(`/medidas/estatis`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (json) {
-                    document.getElementById('jota').innerHTML += ''
+                    document.getElementById('jota').innerHTML = ''
                     console.log(json)
                     var jota = json[4]
-                    document.getElementById('jota').innerHTML += `<p class='cards'> Rating2: ${jota.rating2}</p>`
-                    document.getElementById('jota').innerHTML += `<p class='cards'> kills per Round: ${jota.KillsPerRound}</p>`
-                    document.getElementById('jota').innerHTML += `<p class='cards'> Headshots: ${jota.Headshots}</p>`
-                    document.getElementById('jota').innerHTML += `<p class='cards'> Rating2: ${jota.rating2}</p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'><spam class='verde'> Rating2: ${jota.rating2}</spam></p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'><spam class='verde'> kills per Round: ${jota.KillsPerRound}</spam></p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'><spam class='vermelho'> Headshots: ${jota.Headshots}% </spam></p>`
+                    document.getElementById('jota').innerHTML += `<p class='cards'><spam class='verde'> DeathsPerRound: ${jota.DeathsPerRound}</spam></p>`
 
                 })
                 // estatisticaJogador = response.json()
@@ -265,310 +272,153 @@
 </script>
 
 
+
+
+
+
+
+
+
+
 <script>
 
 
-    b_usuario.innerHTML =  sessionStorage.NICKNAME
+    b_usuario.innerHTML = sessionStorage.NICKNAME
 
 
+    window.onload = graficoDois(1);
 
 
-//     let proximaAtualizacao;
-
-//     window.onload = obterDadosGrafico(1);
- 
-//     function obterDadosGrafico(idAquario) {
-
-//         if (proximaAtualizacao != undefined) {
-//             clearTimeout(proximaAtualizacao);
-//         }
-
-
-//         fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-//             if (response.ok) {
-//                 response.json().then(function (resposta) {
-//                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-//                     plotarGrafico(resposta, idAquario);
-
-//                 });
-//             } else {
-//                 console.error('Nenhum dado encontrado ou erro na API');
-//             }
-//         })
-//             .catch(function (error) {
-//                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-//             });
-//     }
-
-    
-
-//     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-//     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-//     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-//     function plotarGrafico(resposta, idAquario) {
-//         console.log('iniciando plotagem do gráfico...');
-
-//         var dados = {
-//             labels: [],
-//             datasets: [
-//                 {
-//                     label: '',
-
-//                     data: []
-//                 },
-//                 {
-//                     yAxisID: 'y-totaltimes',
-//                     label: 'times Favorito',
-//                     backgroundColor: ['#0BD765', '#FFFF00', '#030A8C'],
-//                     fill: true,
-//                     data: []
-//                 }
-//             ]
-//         };
-
-        
-
-//         for (i = 0; i < resposta.length; i++) {
-//             var registro = resposta[i];
-//             dados.labels.push(registro.times);
-//             dados.datasets[0].data.push(registro.times);
-//             dados.datasets[1].data.push(registro.voto);
-//             console.log(registro.voto)
-//         };
-       
-
-//         console.log(JSON.stringify(dados));
-
-//         var ctx = myChart.getContext('2d');
-//         window.myChart = Chart.Bar(ctx, {
-//             data: dados,
-//             options: {
-//                 responsive: true,
-//                 animation: { duration: 900 },
-//                 hoverMode: 'index',
-//                 stacked: false,
-//                 title: {
-//                     display: true,
-//                     text: 'Quantidade de fans por time:'
-//                 },
-
-//                 scales: {
-//                     yAxes: [{
-//                         type: 'linear',
-//                         display: true,
-//                         position: 'left',
-//                         id: 'y-totaltimes',
-//                         ticks: {
-//                             beginAtZero: true,
-//                             max: 15,
-//                             min: 0
-//                         }
-//                     }, {
-//                         display: false,
-//                     }],
-//                 }
-//             }
-//         });
-
-        
-        
-
-//         // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-//         // buscando a última medida inserida em tabela contendo as capturas, 
-
-//         //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-//         //     Para ajustar o "select", ajuste o comando sql em src/models
-//         function atualizarGrafico(idAquario, dados, dados) {
-
-//             fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-//                 if (response.ok) {
-//                     response.json().then(function (novoRegistro) {
-
-//                         console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-//                         console.log(dados);
-
-//                         for (i = 0; i < novoRegistro.length; i++) {
-//                             var registro = novoRegistro[i];
-//                             // tirando e colocando valores no gráfico
-//                             dados.labels.shift(); // apagar o primeiro
-//                             dados.labels.push(registro.times);// incluir um novo momento
-
-//                             dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-//                             dados.datasets[0].data.push(registro.times); // incluir uma nova medida de umidade
-
-//                             dados.datasets[1].data.shift();
-//                             dados.datasets[1].data.push(registro.voto);
-//                         }
-
-                        
-                       
-//                         window.myChart.update();
-            
-
-//                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-//                         proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 2000);
-//                     });
-//                 } else {
-//                     console.error('Nenhum dado encontrado ou erro na API');
-//                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-//                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, ), 200000);
-//                 }
-//             })
-//                 .catch(function (error) {
-//                     console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-//                 });
-
-//         }
-
-//     }
-// <!-- </script> 
-
-<script>
-       
-
-
-
-window.onload = buscarMedidasEmTempoReal(1);
-
-
-function buscarMedidasEmTempoReal(idAquario) {
-
-    if (proximaAtualizacao != undefined) {
-        clearTimeout(proximaAtualizacao);
-    }
-
-
-    fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (resposta) {
-                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                plotarGrafico(resposta, idAquario);
-
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-        }
-    })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
-}
-
-
-
-// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-// A função *plotarGrafico* também invoca a função *atualizarGrafico*
-function plotarGrafico(resposta, idAquario) {
-    console.log('iniciando plotagem do gráfico...');
-
-    var dados = {
-        labels: [],
-        datasets: [
-            {
-                label: '',
-
-                data: []
-            },
-            {
-                yAxisID: 'y-totalmapa',
-                label: 'mapa Favorito',
-                backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF','#ADD8e6','#FF007F','#008000'],
-                fill: true,
-                data: []
-            }
-        ]
-    };
-  
-
-    for (i = 0; i < resposta.length; i++) {
-        var registro = resposta[i];
-        dados.labels.push(registro.mapa);
-        dados.datasets[0].data.push(registro.mapa);
-        dados.datasets[1].data.push(registro.voto);
-        console.log(registro.voto)
-
-
-    }
-
-    console.log(JSON.stringify(dados));
-
-    var ctx2 = myChart2.getContext('2d');
-    window.myChart2 = Chart.Bar(ctx2, {
-        data: dados,
-        options: {
-            responsive: true,
-            animation: { duration: 900 },
-            hoverMode: 'index',
-            stacked: false,
-            title: {
-                display: true,
-                text: 'Os mapas mais Escolhidos'
-            },
-
-            scales: {
-                yAxes: [{
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    id: 'y-totalmapa',
-                    ticks: {
-                        beginAtZero: true,
-                        max: 75,
-                        min: 0
-                    }
-                }, {
-                    display: false,
-                }],
-            }
-        }
-    });
-
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados) {
-
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+    function graficoDois() {
+        fetch(`/medidas/graficosDois`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
-                response.json().then(function (novoRegistro) {
-
-                    console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(dados);
-
-                    for (i = 0; i < novoRegistro.length; i++) {
-                        var registro = novoRegistro[i];
-                        // tirando e colocando valores no gráfico
-                        dados.labels.shift(); // apagar o primeiro
-                        dados.labels.push(registro.mapa);// incluir um novo momento
-
-                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(registro.mapa); // incluir uma nova medida de umidade
-
-                        dados.datasets[1].data.shift();
-                        dados.datasets[1].data.push(registro.voto);
-                    }
-
-                    window.myChart2.update();
-
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
+
             }
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-
     }
 
-}
-</script> 
 
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    label: '',
+
+                    data: []
+                },
+                {
+                    yAxisID: 'y-totalnivel',
+                    label: 'Nivels da Gc',
+                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000','#FF1493','#4B0082' ],
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nivel);
+            dados.datasets[0].data.push(registro.nivel);
+            dados.datasets[1].data.push(registro.voto);
+            console.log(registro.nivel)
+
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart.getContext('2d');
+        window.myChart = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 900 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: true,
+                    text: 'Os nivels mais Escolhidos'
+                },
+
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-totalnivel',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    }, {
+                        display: false,
+                    }],
+                }
+            }
+        });
+
+
+        // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+        // buscando a última medida inserida em tabela contendo as capturas, 
+
+        //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+        //     Para ajustar o "select", ajuste o comando sql em src/models
+        function atualizarGrafico(dados) {
+
+            fetch(`/medidas/graficosDois`, { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (novoRegistro) {
+
+                        console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
+                        console.log(dados);
+
+                        for (i = 0; i < novoRegistro.length; i++) {
+                            var registro = novoRegistro[i];
+                            // tirando e colocando valores no gráfico
+                            dados.labels.shift(); // apagar o primeiro
+                            dados.labels.push(registro.nivel);// incluir um novo momento
+
+                            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                            dados.datasets[0].data.push(registro.nivel); // incluir uma nova medida de umidade
+
+                            dados.datasets[1].data.shift();
+                            dados.datasets[1].data.push(registro.nivel);
+                        }
+
+                        window.myChart.update();
+
+                        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+
+        }
+
+    }
+</script>

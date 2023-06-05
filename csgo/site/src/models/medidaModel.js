@@ -67,8 +67,9 @@ function graficosDois() {
 
     var instrucaoSql = '';
 
-    instrucaoSql = `SELECT COUNT(usuario.fknivel) as voto  
-    FRom  usuario JOIN fknivel ON  fknivel.idgc = usuario.fknivel group by usuario.fknivel;`;
+    instrucaoSql = `
+    SELECT COUNT(usuario.fknivel)  as voto, nivel.nivel  
+    FRom  usuario JOIN nivel ON  nivel.idnivel = usuario.fknivel group by usuario.fknivel;`;
 
 
 

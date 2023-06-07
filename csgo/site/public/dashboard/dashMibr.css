@@ -113,6 +113,9 @@ body{
   justify-self: center;
   align-items: center;
   margin-left: 65px;
+  background-color: #F2C230;
+  color: #30322F;
+  border-radius: 10px;
 }
 
 .cards {
@@ -161,6 +164,7 @@ body{
 .decoracao_camp a{
   color: white;
   text-decoration: none;
+  font-size: 23px;
 }
 
 .decoracao_camp a:hover{

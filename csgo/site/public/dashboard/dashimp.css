@@ -158,6 +158,9 @@ body{
   justify-self: center;
   align-items: center;
   margin-left: 65px;
+  color: #30322F;
+  border-radius: 10px;
+  background-color: #0BD765;
 }
 
 .corpo{
@@ -260,6 +263,7 @@ body{
 }
 .decoracao_camp a{
   color: white;
+  font-size: 23px ;
 }
 
 .decoracao_camp a:hover{

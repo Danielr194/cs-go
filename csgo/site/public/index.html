@@ -253,11 +253,14 @@
         `Bem vindo TR`,
         `Bem vindo jogador`,
         `Queota?`,
-        `Fallen stop blowing my mind`
+        `Fallen stop blowing my mind`,
+        `A Tribo cuida da Tribo`,
+        `Rush B!`,
+        `Rush A!`
     ];
 
    function mostrar_frase(){
-    var aleatorio = parseInt(Math.random()*5)
+    var aleatorio = parseInt(Math.random()*8)
 
         document.getElementById("frase").innerHTML += `${list_frase[aleatorio]}`
         console.log(list_frase[aleatorio])
@@ -378,7 +381,7 @@ function plotarGrafico(resposta, idAquario) {
                     id: 'y-totalmapa',
                     ticks: {
                         beginAtZero: true,
-                        max: 60,
+                        max: 75,
                         min: 0
                     }
                 }, {

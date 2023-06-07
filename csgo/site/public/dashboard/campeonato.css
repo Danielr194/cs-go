@@ -9,7 +9,7 @@ body{
 .header {
     display: flex;
     border: 50px;
-    border-bottom: 2px solid #0BD765;
+    border-bottom: 2px solid  #F2A663;
     margin-bottom: 15px;
     margin: auto;
     align-items: center;
@@ -31,7 +31,7 @@ body{
   }
   
   .nav a:hover {
-    color: #0BD765;
+    color:  #F2A663;
     transition: 0.5 all;
   }
   
@@ -72,7 +72,7 @@ body{
   justify-content: center;
   align-items: center;
   margin-top: 75px;
-  color: blue ;
+  color: black ;
 
 }
 
@@ -84,7 +84,6 @@ body{
   border-radius: 12px;
   align-items: center;
   flex-direction: row;
-
 
   text-align: center;
 }
@@ -160,14 +159,24 @@ body{
   display: flex;
   width: max-content;
   flex-direction: column;
-  color: blue;
+  color: black;
   border: 2px black solid;
   border-radius: 8px ;
   box-shadow: 7px 5px 3px 3px black;
- 
+  width: 100px;
+  height: 150px;
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.caixa_time p{
+  display: flex;
+  justify-content: center;
+}
+
+.imagem{
+  justify-content: center;
+} 
 
 
 div p{

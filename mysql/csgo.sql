@@ -38,6 +38,7 @@ email VARCHAR(45) unique,
 senha VARCHAR(45),
 confirmarSenha VARCHAR(45),
 fknivel INT,
+
 fktime INT,
 constraint fkQime foreign key(fktime) references time(idTime),
 constraint fknivel foreign key(fknivel)references nivel(idnivel));
@@ -55,6 +56,7 @@ SELECT COUNT(usuario.fktime) as voto, time.nome AS times
         FRom  usuario JOIN time ON  time.idtime = usuario.fktime group by usuario.fktime;
 
 INSERT INTO jogador VALUES
+
 (null, 'Fallen', 1.11, 0.67, 28.6, 0.58, 1),
 (null, 'Boltz', 1.14, 0.70, 37.5, 0.61,1 ),
 (null, 'Chelo', 1.10, 0.68, 58.0, 0.63,1 ),
@@ -115,5 +117,4 @@ SELECT COUNT(questionario.fkmapa) as voto, Nomemapa
 	SELECT COUNT(usuario.fknivel) as voto, nivel.nivel  
     FRom  usuario JOIN nivel ON  nivel.idnivel = usuario.fknivel group by usuario.fknivel;
 
-select rating2, KillsPerRound, Headshots, DeathsPerRound from jogador;
 

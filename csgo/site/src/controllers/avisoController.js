@@ -1,5 +1,5 @@
 var avisoModel = require("../models/avisoModel");
-
+//chasbehdbnja
 function testar(req, res) {
     console.log("ENTRAMOS NO avisoController");
     res.send("ENTRAMOS NO AVISO CONTROLLER");
@@ -19,6 +19,8 @@ function listar(req, res) {
     });
 }
 
+
+//chasbehdbnja
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -32,6 +34,7 @@ function listarPorUsuario(req, res) {
                 }
             }
         )
+
         .catch(
             function (erro) {
                 console.log(erro);

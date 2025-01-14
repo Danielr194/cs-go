@@ -17,6 +17,7 @@
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
+//chasbehdbnja
 
 <body>
 
@@ -282,8 +283,6 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 mapaServer: mapaVar,
 
             })
@@ -323,9 +322,6 @@ function buscarMedidasEmTempoReal(idAquario) {
 
 
 
-// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-// A função *plotarGrafico* também invoca a função *atualizarGrafico*
 function plotarGrafico(resposta, idAquario) {
     console.log('iniciando plotagem do gráfico...');
 
@@ -391,12 +387,6 @@ function plotarGrafico(resposta, idAquario) {
         }
     });
 
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function atualizarGrafico(idAquario, dados) {
 
         fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
